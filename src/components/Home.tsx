@@ -77,13 +77,33 @@ export default function Home() {
           </span>
         </div>
 
-        <div className="flex items-center gap-4 pointer-events-auto">
+        <div className="flex items-center gap-6 pointer-events-auto">
+          {hero.actions.map((action) => {
+             if (action.text === 'CHECK RESUME') {
+               return (
+                 <a
+                   key={action.text}
+                   href={action.href}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300 group"
+                 >
+                   <action.icon className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
+                   <span className="hidden sm:inline font-['Bangers'] tracking-wide">{action.text}</span>
+                 </a>
+               )
+             }
+             return null;
+          })}
+          
+          <div className="h-6 w-[1px] bg-gray-300 hidden sm:block"></div>
+
           <a
             href={`tel:${personal.phone}`}
-            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300"
+            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300 group"
           >
-            <Phone className="w-5 h-5 text-blue-500" />
-            <span className="hidden sm:inline">{personal.phone}</span>
+            <Phone className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
+            <span className="hidden sm:inline font-['Bangers'] tracking-wide">{personal.phone}</span>
           </a>
         </div>
       </header>
@@ -120,7 +140,7 @@ export default function Home() {
       {/* Scrollable Content Container */}
       <div className="relative z-10 flex flex-col items-center w-full">
         {/* Main Hero Section */}
-        <div id="home" className="w-full">
+        <div id="home" className="w-full mt-10">
           <main className="flex flex-col items-start justify-start min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-32 w-full">
             
             <div className="mb-4 pl-1">
@@ -133,9 +153,11 @@ export default function Home() {
               <span className="block">{hero.headline.part1}</span>
             </h1>
 
-            <p className="max-w-xl text-lg text-gray-600 mb-5 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
+            <p className="max-w-xl text-lg text-gray-600 mb-8 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
               {hero.description}
             </p>
+
+
 
             {/* Tech Stack Section */}
             <div className="flex flex-col gap-4 mb-10 pl-1 w-full max-w-5xl">
@@ -152,20 +174,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-5 pl-1">
-              {hero.actions.map((action, index) => (
-                <ActionButton
-                  key={index}
-                  primary={action.primary}
-                  icon={action.icon}
-                  text={action.text}
-                  href={action.href}
-                />
-              ))}
-            </div>
-
             {/* Key Stats / Highlights */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 w-full max-w-4xl pl-1 animate-fadeIn delay-300">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pl-1 animate-fadeIn delay-300">
               {about.stats.map((stat, index) => (
                 <div key={index} className="flex flex-col items-start justify-center p-5 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
                    <span className="text-3xl md:text-4xl font-black text-gray-900 font-['Bangers'] tracking-wide group-hover:text-blue-600 transition-colors">
@@ -306,55 +316,7 @@ const TechBadge = memo(({
   );
 });
 
-const ActionButton = memo(({
-  text,
-  icon,
-  primary,
-  href,
-}: {
-  text: string;
-  icon?: React.ElementType;
-  primary?: boolean;
-  href?: string;
-}) => {
-  const baseStyles =
-    "relative flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-['Inter'] font-bold text-sm tracking-widest transition-all duration-200 w-full sm:w-auto transform active:scale-95 active:translate-y-1";
 
-  const primaryStyles =
-    "bg-blue-600 text-white border-b-4 border-blue-800 hover:bg-blue-500 hover:border-blue-700 shadow-lg shadow-blue-200";
-
-  const secondaryStyles =
-    "bg-white text-gray-800 border border-t border-l border-r border-gray-200 border-b-4 border-b-gray-300 hover:bg-gray-50 hover:border-b-gray-400 shadow-sm";
-
-  const variants = primary ? primaryStyles : secondaryStyles;
-
-  const Icon = icon;
-
-  if (href) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${baseStyles} ${variants} group`}
-      >
-        <span className="relative z-10 flex items-center gap-2">
-          {text}
-          {Icon && <Icon className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
-        </span>
-      </a>
-    );
-  }
-
-  return (
-    <button className={`${baseStyles} ${variants} group`}>
-      <span className="relative z-10 flex items-center gap-2">
-        {text}
-        {Icon && <Icon className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
-      </span>
-    </button>
-  );
-});
 
 const NavLink = memo(({
   icon,
