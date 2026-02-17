@@ -52,13 +52,13 @@ export default function Home() {
   }, [nav]);
 
   return (
-    <div className="relative min-h-screen text-gray-900 dark:text-slate-300 font-['Inter'] overflow-x-hidden selection:bg-blue-200 dark:selection:bg-cyan-900/30 selection:text-blue-900 dark:selection:text-cyan-200 transition-colors duration-500">
+    <div className="relative min-h-screen text-gray-900 font-['Inter'] overflow-x-hidden selection:bg-blue-200 selection:text-blue-900 transition-colors duration-500">
       <AnimatedBackground />
       {/* Top Navigation / Header */}
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 md:py-6 pointer-events-none">
-        <div className="text-2xl md:text-3xl font-normal tracking-wide text-gray-900 dark:text-slate-100 font-['Bangers'] select-none uppercase transition-colors duration-300 pointer-events-auto">
+        <div className="text-2xl md:text-3xl font-normal tracking-wide text-gray-900 font-['Bangers'] select-none uppercase transition-colors duration-300 pointer-events-auto">
           {personal.name.toUpperCase()}
-          <span className="text-blue-600 dark:text-cyan-400">
+          <span className="text-blue-600">
             {" "}
             {personal.surname}
           </span>
@@ -69,20 +69,20 @@ export default function Home() {
 
       {/* Left Sidebar - Vertical Email */}
       <div className="fixed left-6 md:left-12 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-6 pointer-events-auto mix-blend-difference text-white">
-        <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
+        <div className="h-24 w-[1px] bg-gray-400"></div>
         <a
           href={`mailto:${personal.email}`}
-          className="writing-vertical-rl text-blue-600 dark:text-cyan-400 hover:text-blue-800 dark:hover:text-cyan-300 font-bold tracking-widest transition-colors duration-300 transform rotate-180 text-sm"
+          className="writing-vertical-rl text-blue-600 hover:text-blue-800 font-bold tracking-widest transition-colors duration-300 transform rotate-180 text-sm"
           style={{ writingMode: "vertical-rl" }}
         >
           {personal.email}
         </a>
-        <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
+        <div className="h-24 w-[1px] bg-gray-400"></div>
       </div>
 
       {/* Right Sidebar - Socials */}
       <div className="fixed right-6 md:right-12 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-6 pointer-events-auto">
-        <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
+        <div className="h-24 w-[1px] bg-gray-400"></div>
         <div className="flex flex-col gap-5">
           {socials.map((social, index) => (
             <SocialLink
@@ -93,7 +93,7 @@ export default function Home() {
             />
           ))}
         </div>
-        <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
+        <div className="h-24 w-[1px] bg-gray-400"></div>
       </div>
 
       {/* Scrollable Content Container */}
@@ -102,27 +102,27 @@ export default function Home() {
         <div id="home" className="w-full">
           <main className="flex flex-col items-start justify-center min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-20 w-full">
             <div className="mb-3 pl-1">
-              <span className="text-gray-500 dark:text-cyan-200/60 font-medium text-base tracking-wide transition-colors duration-300">
+              <span className="text-gray-500 font-medium text-base tracking-wide transition-colors duration-300">
                 {personal.greeting.split(" ")[0]}{" "}
-                <span className="font-bold text-blue-600 dark:text-cyan-400">
+                <span className="font-bold text-blue-600">
                   {personal.greeting.split(" ")[1]}
                 </span>{" "}
                 {personal.greeting.split(" ").slice(2).join(" ")}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-wide text-gray-900 dark:text-slate-100 mb-6 leading-[0.9] font-['Bangers'] transition-colors duration-300">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-wide text-gray-900 mb-6 leading-[0.9] font-['Bangers'] transition-colors duration-300">
               {hero.headline.part1}{" "}
-              <span className="text-blue-500 dark:text-cyan-500">
+              <span className="text-blue-500">
                 {hero.headline.highlight1}
               </span>{" "}
               &{" "}
-              <span className="text-blue-500 dark:text-cyan-500">
+              <span className="text-blue-500">
                 {hero.headline.highlight2}.
               </span>
             </h1>
 
-            <div className="flex flex-wrap items-center justify-start gap-3 mb-8 text-base text-gray-500 dark:text-slate-400 font-medium max-w-5xl leading-relaxed pl-1">
+            <div className="flex flex-wrap items-center justify-start gap-3 mb-8 text-base text-gray-500 font-medium max-w-5xl leading-relaxed pl-1">
               <span>Building with</span>
               {stack.map((tech, index) => (
                 <TechBadge
@@ -135,7 +135,7 @@ export default function Home() {
               <span>—</span>
             </div>
 
-            <p className="max-w-xl text-base text-gray-500 dark:text-slate-400 mb-10 leading-relaxed text-left pl-1 transition-colors duration-300">
+            <p className="max-w-xl text-base text-gray-500 mb-10 leading-relaxed text-left pl-1 transition-colors duration-300">
               {hero.description}
             </p>
 
@@ -157,7 +157,7 @@ export default function Home() {
                 <a
                   key={index}
                   href={social.href}
-                  className="p-3 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl text-gray-500 dark:text-slate-400 border border-gray-100 dark:border-slate-700 shadow-sm hover:text-blue-600 dark:hover:text-cyan-400 transition-colors duration-200"
+                  className="p-3 bg-white/50 backdrop-blur-sm rounded-xl text-gray-500 border border-gray-100 shadow-sm hover:text-blue-600 transition-colors duration-200"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -199,7 +199,7 @@ export default function Home() {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-40 max-w-[95%] w-fit pointer-events-none">
-        <nav className="flex items-center gap-1 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-slate-900/50 px-2 sm:px-3 py-2 rounded-2xl pointer-events-auto overflow-x-auto no-scrollbar transition-all duration-300">
+        <nav className="flex items-center gap-1 bg-white/90 backdrop-blur-xl border border-gray-200 shadow-sm px-2 sm:px-3 py-2 rounded-2xl pointer-events-auto overflow-x-auto no-scrollbar transition-all duration-300">
           <div className="flex items-center gap-1">
             {nav.map((item, index) => (
               <NavLink
@@ -229,7 +229,7 @@ function SocialLink({
     <a
       href={href}
       title={label}
-      className="p-3 text-blue-600 dark:text-cyan-400 hover:text-blue-800 dark:hover:text-cyan-300 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl transition-all duration-200"
+      className="p-3 text-blue-600 hover:text-blue-800 hover:bg-black/5 rounded-xl transition-all duration-200"
     >
       {icon}
     </a>
@@ -273,7 +273,7 @@ function ActionButton({
     "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md border border-transparent";
 
   const secondaryStyles =
-    "bg-white/10 dark:bg-slate-800/50 backdrop-blur-md text-gray-800 dark:text-white border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-700 shadow-sm";
+    "bg-white/10 backdrop-blur-md text-gray-800 border border-gray-200 hover:bg-gray-50 shadow-sm";
 
   const variants = primary ? primaryStyles : secondaryStyles;
 
@@ -317,7 +317,7 @@ function NavLink({
   return (
     <button
       onClick={onClick}
-      className={`p-3 rounded-xl transition-colors duration-200 shrink-0 ${active ? "text-gray-900 dark:text-white bg-white dark:bg-slate-700 shadow-sm border border-gray-100 dark:border-slate-600" : "text-gray-500 dark:text-slate-500 hover:text-gray-900 dark:hover:text-slate-200 hover:bg-white/50 dark:hover:bg-slate-800/50"}`}
+      className={`p-3 rounded-xl transition-colors duration-200 shrink-0 cursor-pointer ${active ? "text-gray-900 bg-white shadow-sm border border-gray-100" : "text-gray-500 hover:text-gray-900 hover:bg-white/50"}`}
     >
       {icon}
     </button>
