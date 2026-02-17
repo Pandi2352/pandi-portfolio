@@ -157,6 +157,8 @@ export default function Home() {
                 <a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-3 bg-white/50 backdrop-blur-sm rounded-xl text-gray-500 border border-gray-100 shadow-sm hover:text-blue-600 transition-colors duration-200"
                 >
                   <social.icon className="w-5 h-5" />
@@ -238,6 +240,8 @@ function SocialLink({
       href={href}
       title={label}
       aria-label={label}
+      target="_blank"
+      rel="noopener noreferrer"
       className="p-3 text-blue-600 hover:text-blue-800 hover:bg-black/5 rounded-xl transition-all duration-200"
     >
       {icon}

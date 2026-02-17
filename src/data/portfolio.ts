@@ -22,7 +22,7 @@ export const portfolioData = {
     },
     socials: [
         { label: "GitHub", icon: Github, href: "https://github.com/Pandi2352" },
-        { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/mvp-bose" },
+        { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/pandi-selvam-p-1ab62b2a1" },
         { label: "Twitter", icon: Twitter, href: "https://twitter.com/mvp_bose" },
         { label: "Email", icon: Mail, href: "mailto:mvp.bose23@gmail.com" }
     ],
@@ -286,6 +286,92 @@ export const portfolioData = {
             link: "#"
         }
     ],
+    learningProjects: [
+        {
+            title: "AI Sales Agent",
+            description: "A real-time competitive sales battle card generator powered by 7 specialized AI agents. Automates competitor research, feature analysis, and SWOT generation.",
+            tech: ["React 19", "FastAPI", "Gemini 2.5", "Google ADK", "Python"],
+            role: "Full-Stack Developer",
+            features: [
+                "7-Agent Sequential Pipeline",
+                "Live Web Research Grounding",
+                "Automated Battle Card Generation",
+                "Multi-Agent Orchestration"
+            ],
+            tags: ["Agentic AI", "Python", "GenAI"],
+            link: "https://github.com/Pandi2352/AI-sales-agent"
+        },
+        {
+            title: "AISprintForge",
+            description: "AI-powered sprint intelligence platform that turns GitHub/Jira data into actionable reports. Features risk scoring, sprint summaries, and AI chat reports.",
+            tech: ["React 19", "NestJS", "MongoDB", "LangChain", "Gemini 2.5"],
+            role: "Full-Stack Developer",
+            features: [
+                "Multi-Provider Sync (GitHub/Jira)",
+                "AI Sprint Summaries & Risk Scoring",
+                "Natural Language Chat Reports",
+                "Automated Release Notes"
+            ],
+            tags: ["DevTools", "AI", "Productivity"],
+            link: "https://github.com/Pandi2352/AISprintForge"
+        },
+        {
+            title: "TNPSC AI Tutor",
+            description: "An intelligent personalized coaching platform for TNPSC aspirants. Uses RAG-based AI for bilingual notes, adaptive quizzes, and mistake tracking.",
+            tech: ["React", "NestJS", "MongoDB", "Gemini 2.5", "RAG"],
+            role: "Full-Stack Developer",
+            features: [
+                "RAG-Based Bilingual Tutors",
+                "Adaptive Daily Quizzes",
+                "Mistake Pattern Analysis",
+                "Current Affairs integration"
+            ],
+            tags: ["EdTech", "RAG", "Social Impact"],
+            link: "https://github.com/Pandi2352/-TNPSC-AI-Tutor"
+        },
+        {
+            title: "AI-Powered OCR Platform",
+            description: "A state-of-the-art document analysis system leveraging Generative AI to transform documents into structured data, visual knowledge graphs, and actionable insights.",
+            tech: ["React 18", "Node.js", "Gemini 1.5", "RAG"],
+            role: "Full-Stack Developer",
+            features: [
+                "Intelligent OCR & Deep Analysis",
+                "Visual Knowledge Graphs (Mindmaps)",
+                "Identity Verification & Fraud Detection",
+                "Retrieval-Augmented Generation (RAG)"
+            ],
+            tags: ["AI", "OCR", "Document Intelligence"],
+            link: "https://github.com/Pandi2352/ai-ocr"
+        },
+        {
+            title: "Scheduler Orchestrator",
+            description: "A high-performance, resilient job orchestration microservice built to handle complex scheduling needs with execution persistence.",
+            tech: ["NestJS", "Fastify", "MongoDB", "Agenda"],
+            role: "Backend Developer",
+            features: [
+                "Flexible Cron & One-time Scheduling",
+                "Webhook-based Job Execution",
+                "Persistent Job Storage",
+                "Swagger API Documentation"
+            ],
+            tags: ["Microservices", "Backend", "Scheduling"],
+            link: "https://github.com/Pandi2352/Scheduler-Orchestrator"
+        },
+        {
+            title: "Gemini OCR (npm package)",
+            description: "A next-gen document intelligence wrapper for Node.js. Turns any file into structured data, mindmaps, and summaries using Google Gemini.",
+            tech: ["TypeScript", "Google Gemini", "NPM"],
+            role: "Open Source Author",
+            features: [
+                "Multimodal Processing (PDF, Video, etc.)",
+                "Auto-generated Mindmaps & Summaries",
+                "Batch Processing Support",
+                "Strict Entity Extraction"
+            ],
+            tags: ["Open Source", "NPM", "AI"],
+            link: "https://github.com/Pandi2352/npm-gemini-ocr"
+        }
+    ],
     experience: [
         {
             company: "Skillmine Technology",
@@ -336,7 +422,7 @@ export const portfolioData = {
         mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31487.625347318854!2d77.7785591!3d9.4542283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06cf3096b7617b%3A0x633d45ca46285430!2sSivakasi%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716301211111!5m2!1sen!2sin",
         socials: [
             { label: "GitHub", href: "https://github.com/Pandi2352" },
-            { label: "LinkedIn", href: "https://linkedin.com/in/mvp-bose" },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/pandi-selvam-p-1ab62b2a1" },
             { label: "Email", href: "mailto:mvp.bose23@gmail.com" }
         ]
     }

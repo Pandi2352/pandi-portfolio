@@ -1,5 +1,5 @@
 import { portfolioData } from '../data/portfolio';
-import { ExternalLink, Tag } from 'lucide-react';
+import { ExternalLink, Tag, Sparkles } from 'lucide-react';
 
 export default function Projects() {
   const { projects } = portfolioData;
@@ -81,6 +81,78 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+      {/* Learning & Upskilling Section - Dark Lab Theme */}
+      {portfolioData.learningProjects && portfolioData.learningProjects.length > 0 && (
+        <div className="mt-32 pt-0">
+            <div className="relative mb-16 text-center reveal" data-reveal>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-purple-500/20 blur-[50px] rounded-full"></div>
+                <h2 className="relative text-3xl md:text-5xl font-['Bangers'] text-gray-900 tracking-wide z-10">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
+                        Lab & Experiments
+                    </span>
+                    <span className="text-gray-400 text-4xl">.</span>
+                </h2>
+                <p className="mt-4 text-gray-500 max-w-lg mx-auto text-sm font-medium tracking-wide uppercase">
+                    R&D / Agentic Workflows / Vibe Coding
+                </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-2">
+                {portfolioData.learningProjects.map((project, index) => (
+                <a 
+                    key={index}
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex flex-col bg-white rounded-3xl p-1 overflow-hidden hover:-translate-y-2 transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-purple-100/50 reveal"
+                    data-reveal
+                    style={{ transitionDelay: `${index * 150}ms` }}
+                >
+                    {/* Light Card Content */}
+                    <div className="relative h-full bg-gradient-to-br from-white to-purple-50/30 rounded-[22px] p-6 flex flex-col z-20 overflow-hidden border border-purple-100/50">
+                        
+                        {/* Subtle Glow Effects - Lighter */}
+                        <div className="absolute top-0 right-0 w-[150px] h-[150px] bg-purple-200/20 blur-[60px] rounded-full group-hover:bg-purple-300/30 transition-all duration-500"></div>
+                        <div className="absolute bottom-0 left-0 w-[100px] h-[100px] bg-blue-200/20 blur-[50px] rounded-full group-hover:bg-blue-300/30 transition-all duration-500"></div>
+
+                        {/* Top Row */}
+                        <div className="flex justify-between items-start mb-6">
+                            <div className="p-2.5 bg-white rounded-xl border border-purple-100 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                                <Sparkles className="w-5 h-5 text-purple-500" />
+                            </div>
+                            <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-purple-600 transition-colors" />
+                        </div>
+
+                        {/* Text Content */}
+                        <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
+                            {project.title}
+                        </h3>
+                        
+                        <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 group-hover:line-clamp-none transition-all">
+                            {project.description}
+                        </p>
+
+                        {/* Tech Stack - Light Theme */}
+                        <div className="mt-auto flex flex-wrap gap-2">
+                            {project.tech.slice(0, 4).map((t, i) => (
+                                <span key={i} className="px-2 py-1 bg-white text-purple-700 text-[10px] font-bold tracking-wider rounded border border-purple-100/50 shadow-sm">
+                                    {t}
+                                </span>
+                            ))}
+                            {project.tech.length > 4 && (
+                                <span className="px-2 py-1 bg-white text-gray-500 text-[10px] font-bold rounded border border-gray-100 shadow-sm">+{project.tech.length - 4}</span>
+                            )}
+                        </div>
+
+                        {/* Bottom decorative line */}
+                        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-indigo-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    </div>
+                </a>
+                ))}
+            </div>
+        </div>
+      )}
     </section>
   );
 }
