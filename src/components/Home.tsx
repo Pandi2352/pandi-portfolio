@@ -102,7 +102,7 @@ export default function Home() {
         <div id="home" className="w-full">
           <main className="flex flex-col items-start justify-center min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-20 w-full">
             {/* Status Pill */}
-            <div className="mb-6 pl-1 animate-fadeIn">
+            {/* <div className="mb-6 pl-1 animate-fadeIn">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50/80 backdrop-blur-sm border border-blue-100 rounded-full text-blue-700 text-xs font-bold tracking-wide uppercase shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -110,7 +110,7 @@ export default function Home() {
                 </span>
                 Available for New Projects
               </div>
-            </div>
+            </div> */}
 
             <div className="mb-4 pl-1">
               <span className="text-gray-500 font-medium text-base tracking-wide transition-colors duration-300">

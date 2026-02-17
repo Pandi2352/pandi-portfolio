@@ -47,11 +47,24 @@ export const portfolioData = {
     ],
     about: {
         title: "About Me",
-        bio: "I am a Full-Stack Developer and Team Lead with over 2 years of experience in building scalable, user-centric applications. I specialize in bridging the gap between technical execution and product vision. Beyond coding, I focus on architectural design, team mentorship, and optimizing development workflows. My passion lies in Web2 and Web3 technologies, keeping up with AI advancements, and delivering high-impact solutions.",
+        description: [
+            "I'm a Full-Stack Developer & Team Lead with over 2.5 years of experience in building scalable, high-performance applications. My journey began with a curiosity for code and has evolved into a passion for architecting complex systems and leading technical teams.",
+            "Currently, I bridge the gap between product vision and technical execution. I specialize in the MERN stack, Next.js, and cloud architectures, but my true strength lies in problem-solving, code optimization, and mentoring the next generation of developers.",
+            "When I'm not coding, I'm exploring the frontiers of AI, diving into Web3 protocols, or refining my system design skills. I believe in continuous learning/shipping and building software that matters."
+        ],
         stats: [
             { label: "Years Experience", value: "2.5+" },
-            { label: "Projects Led", value: "3+" },
+            { label: "Projects Led", value: "8+" },
             { label: "Team Size", value: "5+" }
+        ],
+        interests: [
+            "AI Agents",
+            "Workflow Automation",
+            "System Architecture",
+            "RAG Systems",
+            "Tech Leadership",
+            "Web3",
+            "UI/UX Design"
         ]
     },
     education: [
