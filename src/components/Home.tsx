@@ -3,6 +3,7 @@ import { portfolioData } from "../data/portfolio";
 import About from "./About";
 import Education from "./Education";
 import Skills from "./Skills";
+import Projects from "./Projects";
 import Experience from "./Experience";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -180,6 +181,11 @@ export default function Home() {
           <Skills />
         </div>
 
+        {/* Projects Section */}
+        <div id="projects" className="w-full">
+          <Projects />
+        </div>
+
         {/* Education Section */}
         <div id="education" className="w-full">
           <Education />
@@ -207,6 +213,7 @@ export default function Home() {
                 key={index}
                 active={activeSection === item.label.toLowerCase()}
                 icon={<item.icon className="w-5 h-5" />}
+                label={item.label}
                 onClick={() => scrollToSection(item.label.toLowerCase())}
               />
             ))}
@@ -230,6 +237,7 @@ function SocialLink({
     <a
       href={href}
       title={label}
+      aria-label={label}
       className="p-3 text-blue-600 hover:text-blue-800 hover:bg-black/5 rounded-xl transition-all duration-200"
     >
       {icon}
@@ -310,14 +318,18 @@ function NavLink({
   icon,
   active,
   onClick,
+  label,
 }: {
   icon: React.ReactNode;
   active?: boolean;
   onClick?: () => void;
+  label: string;
 }) {
   return (
     <button
       onClick={onClick}
+      aria-label={label}
+      title={label}
       className={`p-3 rounded-xl transition-colors duration-200 shrink-0 cursor-pointer ${active ? "text-gray-900 bg-white shadow-sm border border-gray-100" : "text-gray-500 hover:text-gray-900 hover:bg-white/50"}`}
     >
       {icon}

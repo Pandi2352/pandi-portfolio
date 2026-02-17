@@ -159,6 +159,133 @@ export const portfolioData = {
             ]
         }
     ],
+    projects: [
+        {
+            title: "Document Management System (DMS)",
+            description: "An enterprise-grade AI-powered Document Management System that centralizes document storage, retrieval, processing, and automation. Integrated with OCR, NLP, and RAG for intelligent document handling.",
+            tech: ["React Vite", "NestJS", "MongoDB", "Gemini AI", "LangChain", "OCR"],
+            role: "Team Lead",
+            features: [
+                "Intelligent Workflow Automation",
+                "Advanced OCR & Document Comparison",
+                "Schema-Based Field Extraction",
+                "Secure, centralized document storage"
+            ],
+            tags: ["Enterprise", "AI", "Automation"],
+            link: "#"
+        },
+        {
+            title: "First Credit System (FCS)",
+            description: "A comprehensive debt recovery platform designed to improve efficiency and compliance. Manages multiple creditors and debtors with streamlined workflows and regulatory adherence (TCPA, FTC, MVN).",
+            tech: ["Remix JS", "NestJS", "MongoDB"],
+            role: "Team Lead",
+            features: [
+                "Scalable Creditor/Debtor Management",
+                "User-Specific Dashboards",
+                "Regulatory Compliance (TCPA, FTC)",
+                "Data Integrity & Security"
+            ],
+            tags: ["FinTech", "SaaS", "Compliance"],
+            link: "#"
+        },
+        {
+            title: "Click to Cancel",
+            description: "A consumer protection solution enabling easy one-click subscription cancellations. Integrates with billing services like ABC Financials to transparently navigate complex cancellation flows.",
+            tech: ["Remix JS", "NestJS", "MongoDB"],
+            role: "Team Lead",
+            features: [
+                "One-Click Cancellation Button",
+                "Service Provider Integration",
+                "Customer Retention Flows",
+                "Billing Transparency"
+            ],
+            tags: ["Consumer Tech", "Integration", "Web App"],
+            link: "#"
+        },
+        {
+            title: "Triveni Digital Sales Platform",
+            description: "A comprehensive digital transformation platform for the sugar industry maximizing sales efficiency. Features AI-based pricing, digital bidding/auctions, and unified institutional CRM to streamline operations and enhance engagement.",
+            tech: ["React Vite", "NestJS", "MongoDB"],
+            role: "Frontend Developer",
+            features: [
+                "AI-Based Price & Demand Prediction",
+                "Digital Sales (Bidding/Auctions)",
+                "Institutional Sales CRM",
+                "Real-time Analytics & SAP Sync"
+            ],
+            tags: ["Digital Transformation", "B2B", "AI"],
+            link: "#"
+        },
+        {
+            title: "Skillzen",
+            description: "An intelligent multi-tenant Learning Management System leveraging AI/ML for personalized, adaptive learning experiences. Automates content creation and predicts learner outcomes.",
+            tech: ["Remix JS", "NestJS", "MongoDB", "Gemini AI"],
+            role: "Frontend Developer",
+            features: [
+                "AI-Automated Content Creation",
+                "Adaptive Learning Paths",
+                "Predictive Learner Analytics",
+                "Multi-Tenant Architecture"
+            ],
+            tags: ["EdTech", "AI", "SaaS"],
+            link: "#"
+        },
+        {
+            title: "AI Customer Service Agent (CSA)",
+            description: "An AI-powered system handling end-to-end customer service lifecycles. Features policy-driven AI agents that automate communication cadences, handle queries, analyze sentiment for retention offers, and seamlessly escalate complex cases.",
+            tech: ["React", "NestJS", "MongoDB", "Gemini AI", "N8n"],
+            role: "Frontend Developer",
+            features: [
+                "Policy-Driven AI Agent Configuration",
+                "Automated Communication Cadences",
+                "Sentiment Analysis & Retention Logic",
+                "Human Agent Escalation & Ticketing"
+            ],
+            tags: ["AI Agents", "CX", "Automation"],
+            link: "#"
+        },
+        {
+            title: "Union Bank DMS (POC)",
+            description: "AI-powered solution for template-based compliance checking of legal documents. Extracts information from scanned documents to verify compliance against predefined templates.",
+            tech: ["React Vite", "NestJS", "MongoDB", "Cognitive AI"],
+            role: "POC Developer",
+            features: [
+                "Automated Compliance Verification",
+                "Scanned Document Extraction",
+                "Template-Based Analysis"
+            ],
+            tags: ["POC", "Banking", "AI"],
+            link: "#"
+        },
+        {
+            title: "DMS Invoice Processing (POC)",
+            description: "Streamlined invoice management POC that automates extraction, parsing, and workflow triggers. Processes PDF invoices into readable JSON and handles approval flows.",
+            tech: ["React Vite", "NestJS", "MongoDB", "OCR"],
+            role: "POC Developer",
+            features: [
+                "Automated Workflow Triggers",
+                "PDF to JSON Parsing",
+                "Approval/Rejection Flow",
+                "Webhook Integration"
+            ],
+            tags: ["POC", "Automation", "Finance"],
+            link: "#"
+        },
+        {
+            title: "Indian Oil Document Comparison (POC)",
+            description: "AI-driven solution for comparing two documents to identify differences, discrepancies, and inconsistencies. Particularly effective for verifying agreements, contracts, and policy revisions.",
+            tech: ["React Vite", "NestJS", "MongoDB"],
+            role: "Frontend Developer",
+            features: [
+                "Automated Document Comparison",
+                "Discrepancy & Error Detection",
+                "Side-by-Side Diff View",
+                "Contract Verification"
+            ],
+            tags: ["POC", "AI", "Docs"],
+            link: "#"
+        }
+    ],
     experience: [
         {
             company: "Skillmine Technology",
