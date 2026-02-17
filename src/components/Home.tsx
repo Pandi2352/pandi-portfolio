@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react";
 import { portfolioData } from "../data/portfolio";
 import About from "./About";
 import Education from "./Education";
@@ -7,10 +6,10 @@ import Skills from "./Skills";
 import Experience from "./Experience";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import { useTheme } from "../context/ThemeContext";
+
+import AnimatedBackground from "./AnimatedBackground";
 
 export default function Home() {
-  const { theme, toggleTheme } = useTheme();
   const { personal, hero, socials, stack, nav } = portfolioData;
   const [activeSection, setActiveSection] = useState("home");
 
@@ -53,7 +52,8 @@ export default function Home() {
   }, [nav]);
 
   return (
-    <div className="relative min-h-screen bg-blue-50/30 dark:bg-[#0B1120] text-gray-900 dark:text-slate-300 font-['Inter'] overflow-x-hidden selection:bg-blue-200 dark:selection:bg-cyan-900/30 selection:text-blue-900 dark:selection:text-cyan-200 transition-colors duration-500">
+    <div className="relative min-h-screen text-gray-900 dark:text-slate-300 font-['Inter'] overflow-x-hidden selection:bg-blue-200 dark:selection:bg-cyan-900/30 selection:text-blue-900 dark:selection:text-cyan-200 transition-colors duration-500">
+      <AnimatedBackground />
       {/* Top Navigation / Header */}
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 md:py-6 pointer-events-none">
         <div className="text-2xl md:text-3xl font-normal tracking-wide text-gray-900 dark:text-slate-100 font-['Bangers'] select-none uppercase transition-colors duration-300 pointer-events-auto">
@@ -72,23 +72,28 @@ export default function Home() {
         <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
         <a
           href={`mailto:${personal.email}`}
-          className="writing-vertical-rl text-gray-400 dark:text-slate-500 hover:text-blue-600 dark:hover:text-cyan-400 font-bold tracking-widest transition-colors duration-300 transform rotate-180 text-sm"
+          className="writing-vertical-rl text-blue-600 dark:text-cyan-400 hover:text-blue-800 dark:hover:text-cyan-300 font-bold tracking-widest transition-colors duration-300 transform rotate-180 text-sm"
           style={{ writingMode: "vertical-rl" }}
         >
           {personal.email}
         </a>
+        <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
       </div>
 
       {/* Right Sidebar - Socials */}
-      <div className="fixed right-6 md:right-12 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-5 p-4 bg-white/10 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-700/50 rounded-2xl shadow-xl transition-shadow duration-200 pointer-events-auto hover:shadow-2xl">
-        {socials.map((social, index) => (
-          <SocialLink
-            key={index}
-            href={social.href}
-            icon={<social.icon className="w-5 h-5" />}
-            label={social.label}
-          />
-        ))}
+      <div className="fixed right-6 md:right-12 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col items-center gap-6 pointer-events-auto">
+        <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
+        <div className="flex flex-col gap-5">
+          {socials.map((social, index) => (
+            <SocialLink
+              key={index}
+              href={social.href}
+              icon={<social.icon className="w-5 h-5" />}
+              label={social.label}
+            />
+          ))}
+        </div>
+        <div className="h-24 w-[1px] bg-gray-400 dark:bg-slate-400"></div>
       </div>
 
       {/* Scrollable Content Container */}
@@ -141,6 +146,7 @@ export default function Home() {
                   primary={action.primary}
                   icon={action.icon}
                   text={action.text}
+                  href={action.href}
                 />
               ))}
             </div>
@@ -193,7 +199,7 @@ export default function Home() {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-40 max-w-[95%] w-fit pointer-events-none">
-        <nav className="flex items-center gap-1 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-gray-200 dark:border-slate-800 shadow-lg dark:shadow-slate-900/50 px-2 sm:px-3 py-2 rounded-2xl pointer-events-auto overflow-x-auto no-scrollbar transition-all duration-300">
+        <nav className="flex items-center gap-1 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-gray-200 dark:border-slate-800 shadow-sm dark:shadow-slate-900/50 px-2 sm:px-3 py-2 rounded-2xl pointer-events-auto overflow-x-auto no-scrollbar transition-all duration-300">
           <div className="flex items-center gap-1">
             {nav.map((item, index) => (
               <NavLink
@@ -204,20 +210,6 @@ export default function Home() {
               />
             ))}
           </div>
-
-          <div className="w-[1px] h-6 bg-gray-200 dark:bg-slate-800 mx-1 shrink-0"></div>
-
-          <button
-            onClick={toggleTheme}
-            className="p-2 sm:p-2.5 rounded-xl bg-gray-50 dark:bg-slate-800 text-gray-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-700 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors duration-200 shadow-sm border border-gray-100 dark:border-slate-700 shrink-0"
-            aria-label="Toggle Theme"
-          >
-            {theme === "dark" ? (
-              <Moon className="w-5 h-5" />
-            ) : (
-              <Sun className="w-5 h-5" />
-            )}
-          </button>
         </nav>
       </div>
     </div>
@@ -237,7 +229,7 @@ function SocialLink({
     <a
       href={href}
       title={label}
-      className="p-3 text-gray-400 dark:text-slate-600 hover:text-gray-900 dark:hover:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-xl transition-colors duration-200"
+      className="p-3 text-blue-600 dark:text-cyan-400 hover:text-blue-800 dark:hover:text-cyan-300 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl transition-all duration-200"
     >
       {icon}
     </a>
@@ -267,13 +259,15 @@ function ActionButton({
   text,
   icon,
   primary,
+  href,
 }: {
   text: string;
   icon?: React.ElementType;
   primary?: boolean;
+  href?: string;
 }) {
   const baseStyles =
-    "relative flex items-center justify-center gap-2 px-8 py-4 rounded-full font-['Inter'] font-bold text-sm tracking-widest transition-colors duration-200 w-full sm:w-auto overflow-hidden group";
+    "relative flex items-center justify-center gap-2 px-8 py-4 rounded-full font-['Inter'] font-bold text-sm tracking-widest transition-colors duration-200 w-full sm:w-auto overflow-hidden group cursor-pointer";
 
   const primaryStyles =
     "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md border border-transparent";
@@ -284,6 +278,22 @@ function ActionButton({
   const variants = primary ? primaryStyles : secondaryStyles;
 
   const Icon = icon;
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${baseStyles} ${variants}`}
+      >
+        <span className="relative z-10 flex items-center gap-2">
+          {text}
+          {Icon && <Icon className="w-4 h-4" />}
+        </span>
+      </a>
+    );
+  }
 
   return (
     <button className={`${baseStyles} ${variants}`}>

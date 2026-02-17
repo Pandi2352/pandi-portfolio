@@ -18,12 +18,12 @@ export const portfolioData = {
         },
         description: "turning ideas into responsive, secure, and future-ready applications. Focused on creating fast, aesthetic, and purpose-driven web experiences. Always learning, always shipping.",
         actions: [
-            { text: "CHECK GITHUB", primary: true, icon: Github },
-            { text: "CHECK RESUME", primary: false, icon: FileText }
+            { text: "CHECK GITHUB", primary: true, icon: Github, href: "https://github.com/Pandi2352" },
+            { text: "CHECK RESUME", primary: false, icon: FileText, href: "#" }
         ]
     },
     socials: [
-        { label: "GitHub", icon: Github, href: "https://github.com/mvp-bose" },
+        { label: "GitHub", icon: Github, href: "https://github.com/Pandi2352" },
         { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/mvp-bose" },
         { label: "Twitter", icon: Twitter, href: "https://twitter.com/mvp_bose" },
         { label: "Email", icon: Mail, href: "mailto:mvp.bose23@gmail.com" }
