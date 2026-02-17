@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail, Home as HomeIcon, User, Code, Briefcase, MessageCircle, Sparkles, Workflow, FileText, GraduationCap, Shapes, Link, Phone } from 'lucide-react';
 import { SiTailwindcss, SiMongodb, SiReact, SiTypescript, SiDocker, SiNestjs, SiAngular, SiBootstrap, SiFigma, SiFlutter, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiApachekafka, SiRedis, SiSocketdotio, SiOpenai, SiGoogle, SiAnthropic, SiDiscord } from 'react-icons/si';
+import Resume from '../assets/Pandi_Selvam_Resume.pdf';
 
 export const portfolioData = {
     personal: {
@@ -18,7 +19,7 @@ export const portfolioData = {
         description: "Turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions. Focused on performance, quality, and mentorship.",
         actions: [
             { text: "CHECK GITHUB", primary: true, icon: Github, href: "https://github.com/Pandi2352" },
-            { text: "CHECK RESUME", primary: false, icon: FileText, href: "#" }
+            { text: "CHECK RESUME", primary: false, icon: FileText, href: Resume }
         ]
     },
     socials: [
