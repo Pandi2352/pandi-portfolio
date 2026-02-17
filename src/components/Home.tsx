@@ -101,29 +101,33 @@ export default function Home() {
         {/* Main Hero Section */}
         <div id="home" className="w-full">
           <main className="flex flex-col items-start justify-center min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-20 w-full">
-            <div className="mb-3 pl-1">
+            {/* Status Pill */}
+            <div className="mb-6 pl-1 animate-fadeIn">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50/80 backdrop-blur-sm border border-blue-100 rounded-full text-blue-700 text-xs font-bold tracking-wide uppercase shadow-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Available for New Projects
+              </div>
+            </div>
+
+            <div className="mb-4 pl-1">
               <span className="text-gray-500 font-medium text-base tracking-wide transition-colors duration-300">
-                {personal.greeting.split(" ")[0]}{" "}
-                <span className="font-bold text-blue-600">
-                  {personal.greeting.split(" ")[1]}
-                </span>{" "}
-                {personal.greeting.split(" ").slice(2).join(" ")}
+                {personal.greeting}
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-normal tracking-wide text-gray-900 mb-6 leading-[0.9] font-['Bangers'] transition-colors duration-300">
-              {hero.headline.part1}{" "}
-              <span className="text-blue-500">
-                {hero.headline.highlight1}
-              </span>{" "}
-              &{" "}
-              <span className="text-blue-500">
-                {hero.headline.highlight2}.
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-wide text-gray-900 mb-2 leading-[0.95] font-['Bangers'] transition-colors duration-300 drop-shadow-sm">
+              <span className="block">{hero.headline.part1}</span>
             </h1>
 
-            <div className="flex flex-wrap items-center justify-start gap-3 mb-8 text-base text-gray-500 font-medium max-w-5xl leading-relaxed pl-1">
-              <span>Building with</span>
+            <p className="max-w-xl text-lg text-gray-600 mb-10 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
+              {hero.description}
+            </p>
+
+            <div className="flex flex-wrap items-center justify-start gap-3 mb-12 text-sm text-gray-500 font-medium max-w-5xl leading-relaxed pl-1">
+              <span className="uppercase tracking-wider text-xs font-bold text-gray-400 mr-2">Powering Next-Gen Apps with</span>
               {stack.map((tech, index) => (
                 <TechBadge
                   key={index}
@@ -132,12 +136,7 @@ export default function Home() {
                   color={tech.color}
                 />
               ))}
-              <span>—</span>
             </div>
-
-            <p className="max-w-xl text-base text-gray-500 mb-10 leading-relaxed text-left pl-1 transition-colors duration-300">
-              {hero.description}
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-5 pl-1">
               {hero.actions.map((action, index) => (

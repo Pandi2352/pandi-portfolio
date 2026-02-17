@@ -8,15 +8,13 @@ export const portfolioData = {
         email: "mvp.bose23@gmail.com",
         role: "Full-Stack Developer",
         openToWork: true,
-        greeting: "Hi! Pandi here,"
+        greeting: "Hi, I'm Pandi Selvam."
     },
     hero: {
         headline: {
-            part1: "FULL-STACK DEVELOPER BUILDING IN",
-            highlight1: "WEB2",
-            highlight2: "WEB3",
+            part1: "FULL-STACK DEVELOPER",
         },
-        description: "turning ideas into responsive, secure, and future-ready applications. Focused on creating fast, aesthetic, and purpose-driven web experiences. Always learning, always shipping.",
+        description: "turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions. Focused on performance, quality, and mentorship.",
         actions: [
             { text: "CHECK GITHUB", primary: true, icon: Github, href: "https://github.com/Pandi2352" },
             { text: "CHECK RESUME", primary: false, icon: FileText, href: "#" }
@@ -49,11 +47,11 @@ export const portfolioData = {
     ],
     about: {
         title: "About Me",
-        bio: "I am a passionate Full-Stack Developer with a deep interest in building scalable, user-centric applications. With experience in both Web2 and Web3 technologies, I love bridging the gap between traditional web development and the decentralized future. My journey involves constant learning, experimenting with new tools (like AI agents!), and crafting pixel-perfect interfaces.",
+        bio: "I am a Full-Stack Developer and Team Lead with over 2 years of experience in building scalable, user-centric applications. I specialize in bridging the gap between technical execution and product vision. Beyond coding, I focus on architectural design, team mentorship, and optimizing development workflows. My passion lies in Web2 and Web3 technologies, keeping up with AI advancements, and delivering high-impact solutions.",
         stats: [
-            { label: "Years Experience", value: "3+" },
-            { label: "Projects Built", value: "20+" },
-            { label: "Lines of Code", value: "100k+" }
+            { label: "Years Experience", value: "2.5+" },
+            { label: "Projects Led", value: "3+" },
+            { label: "Team Size", value: "5+" }
         ]
     },
     education: [
@@ -117,8 +115,19 @@ export const portfolioData = {
             items: [
                 { name: "Gemini AI", icon: Sparkles },
                 { name: "LangGraph", icon: Workflow },
-                { name: "LangChain", icon: Code }, // Fallback to Code if SiLangchain unavailable, keeping it simple
+                { name: "LangChain", icon: Code },
                 { name: "Figma", icon: SiFigma },
+                { name: "Docker", icon: SiDocker },
+            ]
+        },
+        {
+            category: "Leadership",
+            items: [
+                { name: "Team Mentoring", icon: User },
+                { name: "System Design", icon: Shapes },
+                { name: "Code Review", icon: Code },
+                { name: "Agile/Scrum", icon: Workflow },
+                { name: "Project Mgmt", icon: Briefcase },
             ]
         }
     ],
@@ -127,7 +136,7 @@ export const portfolioData = {
             company: "Skillmine Technology",
             role: "Team Lead",
             duration: "June 2025 - Present",
-            description: "Leading a team of developers, overseeing project delivery, and ensuring code quality. Responsible for architectural decisions and mentoring junior developers.",
+            description: "Spearheading development for key client projects and overseeing the end-to-end delivery lifecycle. Responsibilities include architectural decision-making, code reviews, and implementing best practices. I actively mentor junior developers, manage sprint timelines, and collaborate with stakeholders to translate business requirements into technical solutions.",
             type: "Full-time",
             location: "Sivakasi"
         },
