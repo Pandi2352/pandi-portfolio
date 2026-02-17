@@ -1,17 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy, memo } from "react";
 import { portfolioData } from "../data/portfolio";
-import About from "./About";
-import Education from "./Education";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Experience from "./Experience";
-import Contact from "./Contact";
-import Footer from "./Footer";
+import { Phone } from "lucide-react";
+
+const About = lazy(() => import("./About"));
+const Education = lazy(() => import("./Education"));
+const Skills = lazy(() => import("./Skills"));
+const Projects = lazy(() => import("./Projects"));
+const Experience = lazy(() => import("./Experience"));
+const Contact = lazy(() => import("./Contact"));
+const Footer = lazy(() => import("./Footer"));
 
 import AnimatedBackground from "./AnimatedBackground";
 
+// Loading component
+const SectionLoader = () => (
+  <div className="w-full py-20 flex justify-center items-center">
+    <div className="animate-pulse space-y-4 w-full max-w-4xl px-6">
+      <div className="h-8 bg-gray-200 rounded w-1/4 mx-auto"></div>
+      <div className="h-64 bg-gray-100 rounded-xl w-full"></div>
+    </div>
+  </div>
+);
+
 export default function Home() {
-  const { personal, hero, socials, stack, nav } = portfolioData;
+  const { personal, hero, socials, stack, nav, about } = portfolioData;
   const [activeSection, setActiveSection] = useState("home");
 
   const scrollToSection = (id: string) => {
@@ -28,7 +40,7 @@ export default function Home() {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // Trigger when 50% of the section is visible
+      threshold: 0.2, // Trigger earlier for smoother feel
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -65,7 +77,15 @@ export default function Home() {
           </span>
         </div>
 
-        <div className="flex items-center gap-4 pointer-events-auto"></div>
+        <div className="flex items-center gap-4 pointer-events-auto">
+          <a
+            href={`tel:${personal.phone}`}
+            className="flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300"
+          >
+            <Phone className="w-5 h-5 text-blue-500" />
+            <span className="hidden sm:inline">{personal.phone}</span>
+          </a>
+        </div>
       </header>
 
       {/* Left Sidebar - Vertical Email */}
@@ -101,18 +121,8 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center w-full">
         {/* Main Hero Section */}
         <div id="home" className="w-full">
-          <main className="flex flex-col items-start justify-center min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-20 w-full">
-            {/* Status Pill */}
-            {/* <div className="mb-6 pl-1 animate-fadeIn">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50/80 backdrop-blur-sm border border-blue-100 rounded-full text-blue-700 text-xs font-bold tracking-wide uppercase shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                </span>
-                Available for New Projects
-              </div>
-            </div> */}
-
+          <main className="flex flex-col items-start justify-start min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-32 w-full">
+            
             <div className="mb-4 pl-1">
               <span className="text-gray-500 font-medium text-base tracking-wide transition-colors duration-300">
                 {personal.greeting}
@@ -123,20 +133,23 @@ export default function Home() {
               <span className="block">{hero.headline.part1}</span>
             </h1>
 
-            <p className="max-w-xl text-lg text-gray-600 mb-10 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
+            <p className="max-w-xl text-lg text-gray-600 mb-5 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
               {hero.description}
             </p>
 
-            <div className="flex flex-wrap items-center justify-start gap-3 mb-12 text-sm text-gray-500 font-medium max-w-5xl leading-relaxed pl-1">
-              <span className="uppercase tracking-wider text-xs font-bold text-gray-400 mr-2">Powering Next-Gen Apps with</span>
-              {stack.map((tech, index) => (
-                <TechBadge
-                  key={index}
-                  icon={<tech.icon className="w-3.5 h-3.5" />}
-                  text={tech.text}
-                  color={tech.color}
-                />
-              ))}
+            {/* Tech Stack Section */}
+            <div className="flex flex-col gap-4 mb-10 pl-1 w-full max-w-5xl">
+              <span className="uppercase tracking-[0.2em] text-xs font-extrabold text-blue-500/80">Powering Next-Gen Apps With</span>
+              <div className="flex flex-wrap gap-2.5">
+                {stack.map((tech, index) => (
+                  <TechBadge
+                    key={index}
+                    icon={<tech.icon className="w-3.5 h-3.5" />}
+                    text={tech.text}
+                    color={tech.color}
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-5 pl-1">
@@ -149,6 +162,31 @@ export default function Home() {
                   href={action.href}
                 />
               ))}
+            </div>
+
+            {/* Key Stats / Highlights */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 w-full max-w-4xl pl-1 animate-fadeIn delay-300">
+              {about.stats.map((stat, index) => (
+                <div key={index} className="flex flex-col items-start justify-center p-5 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
+                   <span className="text-3xl md:text-4xl font-black text-gray-900 font-['Bangers'] tracking-wide group-hover:text-blue-600 transition-colors">
+                     {stat.value}
+                   </span>
+                   <span className="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">
+                     {stat.label}
+                   </span>
+                </div>
+              ))}
+               {/* Dynamic Stat for Learning Projects */}
+               {portfolioData.learningProjects && (
+                <div className="flex flex-col items-start justify-center p-5 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                   <span className="text-3xl md:text-4xl font-black font-['Bangers'] tracking-wide">
+                     {portfolioData.learningProjects.length}+
+                   </span>
+                   <span className="text-[10px] md:text-xs font-bold text-blue-100 uppercase tracking-widest mt-1">
+                     R&D Experiments
+                   </span>
+                </div>
+               )}
             </div>
 
             {/* Mobile Socials */}
@@ -168,39 +206,39 @@ export default function Home() {
           </main>
         </div>
 
-        {/* About Section */}
-        <div id="about" className="w-full">
-          <About />
-        </div>
+        <Suspense fallback={<SectionLoader />}>
+            {/* About Section */}
+            <div id="about" className="w-full">
+            <About />
+            </div>
 
-        {/* Experience Section */}
-        <div id="experience" className="w-full">
-          <Experience />
-        </div>
+            {/* Experience Section */}
+            <div id="experience" className="w-full">
+            <Experience />
+            </div>
 
-        {/* Skills Section */}
-        <div id="skills" className="w-full">
-          <Skills />
-        </div>
+            {/* Skills Section */}
+            <div id="skills" className="w-full">
+            <Skills />
+            </div>
 
-        {/* Projects Section */}
-        <div id="projects" className="w-full">
-          <Projects />
-        </div>
+            {/* Projects Section */}
+            <div id="projects" className="w-full">
+            <Projects />
+            </div>
 
-        {/* Education Section */}
-        <div id="education" className="w-full">
-          <Education />
-        </div>
+            {/* Education Section */}
+            <div id="education" className="w-full">
+            <Education />
+            </div>
 
+            {/* Contact Section */}
+            <div id="contact" className="w-full">
+            <Contact />
+            </div>
 
-
-        {/* Contact Section */}
-        <div id="contact" className="w-full">
-          <Contact />
-        </div>
-
-        <Footer />
+            <Footer />
+        </Suspense>
 
         {/* Spacer for bottom nav visibility */}
         <div className="h-24"></div>
@@ -226,7 +264,7 @@ export default function Home() {
   );
 }
 
-function SocialLink({
+const SocialLink = memo(({
   href,
   icon,
   label,
@@ -234,7 +272,7 @@ function SocialLink({
   href: string;
   icon: React.ReactNode;
   label: string;
-}) {
+}) => {
   return (
     <a
       href={href}
@@ -247,9 +285,9 @@ function SocialLink({
       {icon}
     </a>
   );
-}
+});
 
-function TechBadge({
+const TechBadge = memo(({
   text,
   color,
   icon,
@@ -257,7 +295,7 @@ function TechBadge({
   text: string;
   color: string;
   icon: React.ReactNode;
-}) {
+}) => {
   return (
     <span
       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-sm font-bold border ${color} shadow-sm whitespace-nowrap`}
@@ -266,9 +304,9 @@ function TechBadge({
       {text}
     </span>
   );
-}
+});
 
-function ActionButton({
+const ActionButton = memo(({
   text,
   icon,
   primary,
@@ -278,15 +316,15 @@ function ActionButton({
   icon?: React.ElementType;
   primary?: boolean;
   href?: string;
-}) {
+}) => {
   const baseStyles =
-    "relative flex items-center justify-center gap-2 px-8 py-4 rounded-full font-['Inter'] font-bold text-sm tracking-widest transition-colors duration-200 w-full sm:w-auto overflow-hidden group cursor-pointer";
+    "relative flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-['Inter'] font-bold text-sm tracking-widest transition-all duration-200 w-full sm:w-auto transform active:scale-95 active:translate-y-1";
 
   const primaryStyles =
-    "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-md border border-transparent";
+    "bg-blue-600 text-white border-b-4 border-blue-800 hover:bg-blue-500 hover:border-blue-700 shadow-lg shadow-blue-200";
 
   const secondaryStyles =
-    "bg-white/10 backdrop-blur-md text-gray-800 border border-gray-200 hover:bg-gray-50 shadow-sm";
+    "bg-white text-gray-800 border border-t border-l border-r border-gray-200 border-b-4 border-b-gray-300 hover:bg-gray-50 hover:border-b-gray-400 shadow-sm";
 
   const variants = primary ? primaryStyles : secondaryStyles;
 
@@ -298,27 +336,27 @@ function ActionButton({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${baseStyles} ${variants}`}
+        className={`${baseStyles} ${variants} group`}
       >
         <span className="relative z-10 flex items-center gap-2">
           {text}
-          {Icon && <Icon className="w-4 h-4" />}
+          {Icon && <Icon className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
         </span>
       </a>
     );
   }
 
   return (
-    <button className={`${baseStyles} ${variants}`}>
+    <button className={`${baseStyles} ${variants} group`}>
       <span className="relative z-10 flex items-center gap-2">
         {text}
-        {Icon && <Icon className="w-4 h-4" />}
+        {Icon && <Icon className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
       </span>
     </button>
   );
-}
+});
 
-function NavLink({
+const NavLink = memo(({
   icon,
   active,
   onClick,
@@ -328,7 +366,7 @@ function NavLink({
   active?: boolean;
   onClick?: () => void;
   label: string;
-}) {
+}) => {
   return (
     <button
       onClick={onClick}
@@ -339,4 +377,4 @@ function NavLink({
       {icon}
     </button>
   );
-}
+});

@@ -1,11 +1,12 @@
-import { Github, Linkedin, Mail, Twitter, Home as HomeIcon, User, Code, Briefcase, MessageCircle, Sparkles, Workflow, FileText, GraduationCap, Shapes } from 'lucide-react';
-import { SiTailwindcss, SiMongodb, SiReact, SiTypescript, SiDocker, SiNestjs, SiAngular, SiBootstrap, SiFigma, SiFlutter, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiApachekafka, SiRedis, SiSocketdotio, SiOpenai, SiGoogle, SiAnthropic } from 'react-icons/si';
+import { Github, Linkedin, Mail, Home as HomeIcon, User, Code, Briefcase, MessageCircle, Sparkles, Workflow, FileText, GraduationCap, Shapes, Link, Phone } from 'lucide-react';
+import { SiTailwindcss, SiMongodb, SiReact, SiTypescript, SiDocker, SiNestjs, SiAngular, SiBootstrap, SiFigma, SiFlutter, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiApachekafka, SiRedis, SiSocketdotio, SiOpenai, SiGoogle, SiAnthropic, SiDiscord } from 'react-icons/si';
 
 export const portfolioData = {
     personal: {
         name: "Pandi Selvam",
         surname: "P.",
         email: "mvp.bose23@gmail.com",
+        phone: "+91 9655396956",
         role: "Full-Stack Developer",
         openToWork: false,
         greeting: "Hi, I'm Pandi Selvam."
@@ -23,13 +24,20 @@ export const portfolioData = {
     socials: [
         { label: "GitHub", icon: Github, href: "https://github.com/Pandi2352" },
         { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/pandi-selvam-p-1ab62b2a1" },
-        { label: "Twitter", icon: Twitter, href: "https://twitter.com/mvp_bose" },
-        { label: "Email", icon: Mail, href: "mailto:mvp.bose23@gmail.com" }
+        { label: "Discord", icon: SiDiscord, href: "https://discord.com/invite/JEuEdJJB" },
+        { label: "Email", icon: Mail, href: "mailto:mvp.bose23@gmail.com" },
+        { label: "Phone", icon: Phone, href: "tel:+919655396956" }
     ],
     stack: [
         { text: "React", icon: SiReact, color: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:border-blue-500/20" },
         { text: "TS", icon: SiTypescript, color: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:border-blue-500/20" },
         { text: "Tailwind", icon: SiTailwindcss, color: "bg-cyan-50 text-cyan-700 border-cyan-200 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/20" },
+        { text: "Python", icon: SiPython, color: "bg-yellow-50 text-yellow-700 border-yellow-200 dark:bg-yellow-500/10 dark:text-yellow-300 dark:border-yellow-500/20" },
+        { text: "FastAPI", icon: SiFastapi, color: "bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-500/10 dark:text-teal-300 dark:border-teal-500/20" },
+        { text: "Node & Express", icon: SiNodedotjs, color: "bg-green-50 text-green-700 border-green-200 dark:bg-green-500/10 dark:text-green-300 dark:border-green-500/20" },
+        { text: "React Native", icon: SiReact, color: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:border-blue-500/20" },
+        { text: "Flutter", icon: SiFlutter, color: "bg-cyan-50 text-cyan-700 border-cyan-200 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/20" },
+        { text: "LangChain", icon: Link, color: "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/20" },
         { text: "MongoDB", icon: SiMongodb, color: "bg-green-50 text-green-700 border-green-200 dark:bg-green-500/10 dark:text-green-300 dark:border-green-500/20" },
         { text: "Docker", icon: SiDocker, color: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:border-blue-500/20" },
         { text: "LangGraph", icon: Workflow, color: "bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-500/10 dark:text-orange-300 dark:border-orange-500/20" },
@@ -423,7 +431,8 @@ export const portfolioData = {
         socials: [
             { label: "GitHub", href: "https://github.com/Pandi2352" },
             { label: "LinkedIn", href: "https://www.linkedin.com/in/pandi-selvam-p-1ab62b2a1" },
-            { label: "Email", href: "mailto:mvp.bose23@gmail.com" }
+            { label: "Email", href: "mailto:mvp.bose23@gmail.com" },
+            { label: "Phone", href: "tel:+919655396956" }
         ]
     }
 };

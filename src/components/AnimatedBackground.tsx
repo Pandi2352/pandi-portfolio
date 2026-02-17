@@ -1,4 +1,6 @@
-export default function AnimatedBackground() {
+import { memo } from 'react';
+
+function AnimatedBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none select-none bg-slate-50">
       <div className="absolute top-[-12%] left-[-12%] h-[75%] w-[75%] rounded-full blur-[120px] bg-blue-100/50" />
@@ -7,3 +9,5 @@ export default function AnimatedBackground() {
     </div>
   );
 }
+
+export default memo(AnimatedBackground);
