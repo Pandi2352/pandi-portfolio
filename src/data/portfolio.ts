@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Twitter, Home as HomeIcon, User, Code, Briefcase, MessageCircle, Sparkles, Workflow, FileText, GraduationCap, Shapes } from 'lucide-react';
-import { SiTailwindcss, SiMongodb, SiReact, SiTypescript, SiDocker, SiNestjs, SiAngular, SiBootstrap, SiFigma, SiFlutter } from 'react-icons/si';
+import { SiTailwindcss, SiMongodb, SiReact, SiTypescript, SiDocker, SiNestjs, SiAngular, SiBootstrap, SiFigma, SiFlutter, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiApachekafka, SiRedis, SiSocketdotio, SiOpenai, SiGoogle, SiAnthropic } from 'react-icons/si';
 
 export const portfolioData = {
     personal: {
@@ -39,10 +39,10 @@ export const portfolioData = {
     nav: [
         { label: "Home", icon: HomeIcon },
         { label: "About", icon: User },
-        { label: "Education", icon: GraduationCap },
+        { label: "Experience", icon: Briefcase },
         { label: "Skills", icon: Shapes },
         { label: "Projects", icon: Code },
-        { label: "Experience", icon: Briefcase },
+        { label: "Education", icon: GraduationCap },
         { label: "Contact", icon: MessageCircle }
     ],
     about: {
@@ -109,10 +109,17 @@ export const portfolioData = {
             ]
         },
         {
-            category: "Backend",
+            category: "Backend & System",
             items: [
+                { name: "Node.js", icon: SiNodedotjs },
+                { name: "Express.js", icon: SiExpress },
                 { name: "NestJS", icon: SiNestjs },
+                { name: "Python", icon: SiPython },
+                { name: "FastAPI", icon: SiFastapi },
                 { name: "MongoDB", icon: SiMongodb },
+                { name: "Kafka", icon: SiApachekafka },
+                { name: "Redis", icon: SiRedis },
+                { name: "WebSockets", icon: SiSocketdotio },
             ]
         },
         {
@@ -141,6 +148,14 @@ export const portfolioData = {
                 { name: "Code Review", icon: Code },
                 { name: "Agile/Scrum", icon: Workflow },
                 { name: "Project Mgmt", icon: Briefcase },
+            ]
+        },
+        {
+            category: "Vibe Coding",
+            items: [
+                { name: "Codex CLI", icon: SiOpenai },
+                { name: "Claude CLI", icon: SiAnthropic },
+                { name: "Gemini CLI", icon: SiGoogle },
             ]
         }
     ],

@@ -170,9 +170,9 @@ export default function Home() {
           <About />
         </div>
 
-        {/* Education Section */}
-        <div id="education" className="w-full">
-          <Education />
+        {/* Experience Section */}
+        <div id="experience" className="w-full">
+          <Experience />
         </div>
 
         {/* Skills Section */}
@@ -180,10 +180,12 @@ export default function Home() {
           <Skills />
         </div>
 
-        {/* Experience Section */}
-        <div id="experience" className="w-full">
-          <Experience />
+        {/* Education Section */}
+        <div id="education" className="w-full">
+          <Education />
         </div>
+
+
 
         {/* Contact Section */}
         <div id="contact" className="w-full">
