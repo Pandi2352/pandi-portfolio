@@ -195,7 +195,7 @@ export default function Home() {
         <Footer />
 
         {/* Spacer for bottom nav visibility */}
-        <div className="h-32"></div>
+        <div className="h-24"></div>
       </div>
 
       {/* Bottom Navigation */}

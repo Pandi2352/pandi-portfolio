@@ -7,14 +7,14 @@ export const portfolioData = {
         surname: "P.",
         email: "mvp.bose23@gmail.com",
         role: "Full-Stack Developer",
-        openToWork: true,
+        openToWork: false,
         greeting: "Hi, I'm Pandi Selvam."
     },
     hero: {
         headline: {
             part1: "FULL-STACK DEVELOPER",
         },
-        description: "turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions. Focused on performance, quality, and mentorship.",
+        description: "Turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions. Focused on performance, quality, and mentorship.",
         actions: [
             { text: "CHECK GITHUB", primary: true, icon: Github, href: "https://github.com/Pandi2352" },
             { text: "CHECK RESUME", primary: false, icon: FileText, href: "#" }
@@ -208,7 +208,7 @@ export const portfolioData = {
         location: "Sivakasi, Tamil Nadu, India",
         mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31487.625347318854!2d77.7785591!3d9.4542283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06cf3096b7617b%3A0x633d45ca46285430!2sSivakasi%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1716301211111!5m2!1sen!2sin",
         socials: [
-            { label: "GitHub", href: "https://github.com/mvp-bose" },
+            { label: "GitHub", href: "https://github.com/Pandi2352" },
             { label: "LinkedIn", href: "https://linkedin.com/in/mvp-bose" },
             { label: "Email", href: "mailto:mvp.bose23@gmail.com" }
         ]

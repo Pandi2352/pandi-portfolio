@@ -5,7 +5,7 @@ export default function Contact() {
   const { contact } = portfolioData;
 
   return (
-    <section className="relative w-full max-w-6xl mx-auto px-6 py-20 md:py-32 flex flex-col items-center gap-12 text-center">
+    <section className="relative w-full max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center gap-8 md:gap-12 text-center">
       
       {/* Section Title */}
       <h2 className="text-4xl md:text-6xl font-['Bangers'] text-gray-900 tracking-wide reveal" data-reveal>
@@ -29,7 +29,7 @@ export default function Contact() {
                 <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
                     <Mail className="w-5 h-5 text-blue-500" />
                 </div>
-                <span className="font-medium">{contact.email}</span>
+                <span className="font-medium break-all">{contact.email}</span>
               </a>
 
               <div className="flex items-center gap-3 text-gray-600">
@@ -64,10 +64,17 @@ export default function Contact() {
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
             title="Location Map"
-            className="grayscale hover:grayscale-0 transition-all duration-500"
+            className="w-full h-full object-cover transition-opacity duration-500"
           ></iframe>
         </div>
 
+      </div>
+
+      {/* Quote Section */}
+      <div className="mt-10 md:mt-16 text-center reveal reveal-delay-4 px-4" data-reveal>
+        <blockquote className="text-xl md:text-2xl font-light italic text-gray-400 font-['Bangers'] tracking-wider opacity-80 hover:opacity-100 transition-opacity">
+          "Never forget what you are. The internet will not. Wear it like armor."
+        </blockquote>
       </div>
 
     </section>

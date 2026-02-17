@@ -5,7 +5,7 @@ export default function Footer() {
   const { personal, socials } = portfolioData;
 
   return (
-    <footer className="w-full py-8 mt-12 mb-24 md:mb-8 border-t border-gray-100">
+    <footer className="w-full py-6 mt-0 mb-6 md:mb-8 border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         
         {/* Copyright */}
