@@ -1,1 +1,4 @@
-/*    /index.html   200
+/assets/*  /assets/:splat  200
+/certificates/*  /certificates/:splat  200
+/Pandi_Selvam_Resume.pdf  /Pandi_Selvam_Resume.pdf  200
+/*  /index.html  200
