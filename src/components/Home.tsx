@@ -236,7 +236,7 @@ export default function Home() {
               })}
                {/* Dynamic Stat for Learning Projects */}
                {portfolioData.learningProjects && (
-                <div className="flex flex-col items-start justify-center p-3.5 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+                <div className="flex flex-col items-start justify-center p-3.5 bg-blue-600 text-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
                    <div className="absolute -right-2 -top-2 opacity-20">
                       <Sparkles size={56} className="rotate-12" />
                    </div>

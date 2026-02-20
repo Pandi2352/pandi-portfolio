@@ -3,12 +3,12 @@ import { portfolioData } from '../data/portfolio';
 import { Award, ExternalLink, User, Calendar, BadgeCheck } from 'lucide-react';
 
 const categoryConfig: Record<string, { gradient: string; bg: string; text: string; border: string }> = {
-  "Full-Stack": { gradient: "from-violet-500 to-purple-600", bg: "bg-violet-50", text: "text-violet-700", border: "border-violet-200" },
-  "Frontend":   { gradient: "from-blue-500 to-cyan-500",     bg: "bg-blue-50",   text: "text-blue-700",   border: "border-blue-200" },
+  "Full-Stack": { gradient: "from-blue-500 to-blue-700",     bg: "bg-blue-50",    text: "text-blue-700",    border: "border-blue-200" },
+  "Frontend":   { gradient: "from-sky-500 to-blue-500",      bg: "bg-sky-50",     text: "text-sky-700",     border: "border-sky-200" },
   "Backend":    { gradient: "from-emerald-500 to-teal-600",  bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-200" },
-  "Mobile":     { gradient: "from-sky-500 to-indigo-500",    bg: "bg-sky-50",     text: "text-sky-700",    border: "border-sky-200" },
-  "AI":         { gradient: "from-amber-500 to-orange-500",  bg: "bg-amber-50",   text: "text-amber-700",  border: "border-amber-200" },
-  "Tools":      { gradient: "from-gray-500 to-slate-600",    bg: "bg-gray-50",    text: "text-gray-700",   border: "border-gray-200" },
+  "Mobile":     { gradient: "from-cyan-500 to-blue-500",     bg: "bg-cyan-50",    text: "text-cyan-700",    border: "border-cyan-200" },
+  "AI":         { gradient: "from-amber-500 to-orange-500",  bg: "bg-amber-50",   text: "text-amber-700",   border: "border-amber-200" },
+  "Tools":      { gradient: "from-gray-500 to-slate-600",    bg: "bg-gray-50",    text: "text-gray-700",    border: "border-gray-200" },
 };
 
 const categories = ["All", ...Object.keys(categoryConfig)] as const;
@@ -34,9 +34,9 @@ export default function Certificates() {
             Certificates
             <span className="text-blue-500">.</span>
           </h2>
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-purple-50 border border-purple-100 rounded-full">
-            <BadgeCheck className="w-4 h-4 text-purple-600" />
-            <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">Udemy Verified</span>
+          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-blue-50 border border-blue-100 rounded-full">
+            <BadgeCheck className="w-4 h-4 text-blue-600" />
+            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">Udemy Verified</span>
           </div>
         </div>
         <p className="text-gray-500 text-sm font-medium max-w-lg">

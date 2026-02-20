@@ -54,7 +54,7 @@ export const portfolioData = {
         { text: "MongoDB", icon: SiMongodb, color: "bg-green-50 text-green-700 border-green-200 dark:bg-green-500/10 dark:text-green-300 dark:border-green-500/20" },
         { text: "Docker", icon: SiDocker, color: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:border-blue-500/20" },
         { text: "LangGraph", icon: Workflow, color: "bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-500/10 dark:text-orange-300 dark:border-orange-500/20" },
-        { text: "Gemini AI", icon: Sparkles, color: "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-500/10 dark:text-purple-300 dark:border-purple-500/20" },
+        { text: "Gemini AI", icon: Sparkles, color: "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:border-blue-500/20" },
         { text: "NestJS", icon: SiNestjs, color: "bg-red-50 text-red-700 border-red-200 dark:bg-red-500/10 dark:text-red-300 dark:border-red-500/20" }
     ],
     nav: [
