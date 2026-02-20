@@ -5,7 +5,7 @@ export default function Education() {
   const { education } = portfolioData;
 
   return (
-    <section className="relative w-full max-w-4xl mx-auto px-6 py-20 md:py-32 flex flex-col items-start gap-16">
+    <section className="relative w-full max-w-4xl mx-auto px-6 py-12 md:py-20 flex flex-col items-start gap-16">
       
       {/* Section Title */}
       <h2 className="text-4xl md:text-6xl font-['Bangers'] text-gray-900 tracking-wide reveal" data-reveal>

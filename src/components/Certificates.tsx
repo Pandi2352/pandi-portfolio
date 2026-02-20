@@ -25,7 +25,7 @@ export default function Certificates() {
     cat === "All" ? certificates.length : certificates.filter(c => c.category === cat).length;
 
   return (
-    <section className="relative w-full max-w-5xl mx-auto px-6 py-20 md:py-32 flex flex-col items-start gap-12">
+    <section className="relative w-full max-w-5xl mx-auto px-6 py-12 md:py-20 flex flex-col items-start gap-12">
 
       {/* Section Header */}
       <div className="flex flex-col gap-4 w-full">

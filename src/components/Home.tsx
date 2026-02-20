@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, memo } from "react";
+import React, { useState, useEffect, useRef, lazy, memo, Suspense } from "react";
 import { portfolioData } from "../data/portfolio";
 import { Phone, Clock, Layers, Users, Sparkles } from "lucide-react";
 
@@ -12,21 +12,16 @@ const Contact = lazy(() => import("./Contact"));
 const Footer = lazy(() => import("./Footer"));
 
 import AnimatedBackground from "./AnimatedBackground";
-import LazySection from "./LazySection";
 
-// Loading component
-const SectionLoader = () => (
-  <div className="w-full py-20 flex justify-center items-center">
-    <div className="animate-pulse space-y-4 w-full max-w-4xl px-6">
-      <div className="h-8 bg-gray-200 rounded w-1/4 mx-auto"></div>
-      <div className="h-64 bg-gray-100 rounded-xl w-full"></div>
-    </div>
-  </div>
-);
+// Disable browser's unreliable scroll restoration for SPAs
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
 export default function Home() {
   const { personal, hero, socials, stack, nav, about } = portfolioData;
   const [activeSection, setActiveSection] = useState("home");
+  const scrollRestored = useRef(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -36,14 +31,52 @@ export default function Home() {
     }
   };
 
+  // Save scroll position before unload
+  useEffect(() => {
+    const saveScroll = () => {
+      sessionStorage.setItem('scrollY', String(window.scrollY));
+    };
+    window.addEventListener('beforeunload', saveScroll);
+    return () => window.removeEventListener('beforeunload', saveScroll);
+  }, []);
+
+  // Restore scroll position after lazy sections have rendered
+  useEffect(() => {
+    if (scrollRestored.current) return;
+    const savedY = sessionStorage.getItem('scrollY');
+    if (!savedY || savedY === '0') {
+      scrollRestored.current = true;
+      return;
+    }
+    const targetY = parseInt(savedY, 10);
+
+    // Wait for lazy chunks to render so page has full height
+    const tryRestore = () => {
+      if (document.body.scrollHeight >= targetY) {
+        window.scrollTo(0, targetY);
+        scrollRestored.current = true;
+        sessionStorage.removeItem('scrollY');
+      } else {
+        requestAnimationFrame(tryRestore);
+      }
+    };
+    requestAnimationFrame(tryRestore);
+
+    // Safety timeout — restore best effort after 2s even if height never matches
+    const timeout = setTimeout(() => {
+      if (!scrollRestored.current) {
+        window.scrollTo(0, targetY);
+        scrollRestored.current = true;
+        sessionStorage.removeItem('scrollY');
+      }
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // Track active section via IntersectionObserver
   useEffect(() => {
     const sections = nav.map((item) => item.label.toLowerCase());
-
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.2, // Trigger earlier for smoother feel
-    };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -51,7 +84,7 @@ export default function Home() {
           setActiveSection(entry.target.id);
         }
       });
-    }, options);
+    }, { root: null, rootMargin: "0px", threshold: 0.2 });
 
     sections.forEach((id) => {
       const element = document.getElementById(id);
@@ -237,52 +270,38 @@ export default function Home() {
           </main>
         </div>
 
-        {/* Deferred Sections */}
-        <div id="about" className="w-full">
-          <LazySection fallback={<SectionLoader />}>
+        {/* Sections */}
+        <Suspense>
+          <div id="about" className="w-full">
             <About />
-          </LazySection>
-        </div>
+          </div>
 
-        <div id="experience" className="w-full">
-          <LazySection fallback={<SectionLoader />}>
+          <div id="experience" className="w-full">
             <Experience />
-          </LazySection>
-        </div>
+          </div>
 
-        <div id="skills" className="w-full">
-          <LazySection fallback={<SectionLoader />}>
+          <div id="skills" className="w-full">
             <Skills />
-          </LazySection>
-        </div>
+          </div>
 
-        <div id="projects" className="w-full">
-          <LazySection fallback={<SectionLoader />}>
+          <div id="projects" className="w-full">
             <Projects />
-          </LazySection>
-        </div>
+          </div>
 
-        <div id="education" className="w-full">
-          <LazySection fallback={<SectionLoader />}>
+          <div id="education" className="w-full">
             <Education />
-          </LazySection>
-        </div>
+          </div>
 
-        <div id="certificates" className="w-full">
-          <LazySection fallback={<SectionLoader />}>
+          <div id="certificates" className="w-full">
             <Certificates />
-          </LazySection>
-        </div>
+          </div>
 
-        <div id="contact" className="w-full">
-          <LazySection fallback={<SectionLoader />}>
+          <div id="contact" className="w-full">
             <Contact />
-          </LazySection>
-        </div>
+          </div>
 
-        <LazySection>
           <Footer />
-        </LazySection>
+        </Suspense>
 
         {/* Spacer for bottom nav visibility */}
         <div className="h-24"></div>

@@ -5,7 +5,7 @@ export default function Projects() {
   const { projects } = portfolioData;
 
   return (
-    <section className="relative w-full max-w-6xl mx-auto px-6 py-20">
+    <section className="relative w-full max-w-6xl mx-auto px-6 py-12 md:py-20">
         
       {/* Section Title */}
       <h2 className="text-4xl md:text-6xl font-['Bangers'] text-gray-900 tracking-wide mb-16 text-center reveal" data-reveal>

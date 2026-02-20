@@ -5,7 +5,7 @@ export default function Contact() {
   const { contact, personal } = portfolioData;
 
   return (
-    <section className="relative w-full max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col items-center gap-8 md:gap-12 text-center">
+    <section className="relative w-full max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col items-center gap-8 md:gap-12 text-center">
       
       {/* Section Title */}
       <h2 className="text-4xl md:text-6xl font-['Bangers'] text-gray-900 tracking-wide reveal" data-reveal>
