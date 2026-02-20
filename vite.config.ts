@@ -41,7 +41,7 @@ export default defineConfig({
     VitePWA({
       injectRegister: null, // We will register it manually to avoid render blocking
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'vite.svg'],
+      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png', 'vite.svg', 'og.png'],
       manifest: {
         name: 'Pandi Selvam Portfolio',
         short_name: 'Pandi Portfolio',
