@@ -17,7 +17,7 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             if (id.includes('framer-motion')) return 'animations';
             if (id.includes('lucide-react') || id.includes('react-icons')) return 'icons';
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) return 'vendor-core';
+            if (id.includes('react') || id.includes('react-dom')) return 'vendor-core';
             return 'vendor-others';
           }
         },

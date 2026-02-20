@@ -121,13 +121,37 @@
     
     <script type="module" src="/src/main.tsx" fetchpriority="high"></script>
     
-    <!-- Google tag (gtag.js) deferred -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4PP9KB5TL"></script>
+    <!-- Google Tag Manager - Interaction Based Load -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-F4PP9KB5TL', { 'animate': false });
+      (function() {
+        var gtmLoaded = false;
+        function loadGTM() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+          
+          // GTM Script
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-F4PP9KB5TL';
+          document.body.appendChild(script);
+
+          // GTM Config
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-F4PP9KB5TL', { 'animate': false });
+          
+
+        }
+
+        // Listener for various interactions
+        window.addEventListener('scroll', loadGTM, { once: true, passive: true });
+        window.addEventListener('mousemove', loadGTM, { once: true, passive: true });
+        window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
+        
+        // Fallback for bots/slow users
+        setTimeout(loadGTM, 4000);
+      })();
     </script>
   </body>
 </html>

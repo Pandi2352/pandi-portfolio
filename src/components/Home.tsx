@@ -145,7 +145,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center w-full">
         {/* Main Hero Section */}
         <div id="home" className="w-full mt-10">
-          <main className="flex flex-col items-start justify-start min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-32 w-full">
+          <main className="flex flex-col items-start justify-start min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto w-full">
             
             <div className="mb-4 pl-1">
               <span className="text-gray-600 font-medium text-base tracking-wide transition-colors duration-300">
