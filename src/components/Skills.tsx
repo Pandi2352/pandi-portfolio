@@ -55,7 +55,7 @@ export default function Skills() {
                       }
                     `}
                   >
-                    <skill.icon className={`w-4 h-4 ${isSpecial ? "text-purple-500" : "text-gray-400 group-hover/item:text-blue-500"}`} />
+                    <skill.icon className={`w-4 h-4 ${isSpecial ? "text-purple-500" : "text-gray-600"}`} />
                     <span className="text-sm font-semibold">
                       {skill.name}
                     </span>

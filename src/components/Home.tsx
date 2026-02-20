@@ -1,6 +1,6 @@
-import React, { useState, useEffect, Suspense, lazy, memo } from "react";
+import React, { useState, useEffect, lazy, memo } from "react";
 import { portfolioData } from "../data/portfolio";
-import { Phone } from "lucide-react";
+import { Phone, Clock, Layers, Users, Sparkles } from "lucide-react";
 
 const About = lazy(() => import("./About"));
 const Education = lazy(() => import("./Education"));
@@ -11,6 +11,7 @@ const Contact = lazy(() => import("./Contact"));
 const Footer = lazy(() => import("./Footer"));
 
 import AnimatedBackground from "./AnimatedBackground";
+import LazySection from "./LazySection";
 
 // Loading component
 const SectionLoader = () => (
@@ -86,6 +87,7 @@ export default function Home() {
                    href={action.href}
                    target="_blank"
                    rel="noopener noreferrer"
+                   aria-label={`View ${personal.name}'s Resume`}
                    className="flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300 group"
                  >
                    <action.icon className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
@@ -100,6 +102,7 @@ export default function Home() {
 
           <a
             href={`tel:${personal.phone}`}
+            aria-label={`Call ${personal.name} at ${personal.phone}`}
             className="flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300 group"
           >
             <Phone className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
@@ -113,6 +116,7 @@ export default function Home() {
         <div className="h-24 w-[1px] bg-gray-400"></div>
         <a
           href={`mailto:${personal.email}`}
+          aria-label={`Email ${personal.name}`}
           className="writing-vertical-rl text-blue-600 hover:text-blue-800 font-bold tracking-widest transition-colors duration-300 transform rotate-180 text-sm"
           style={{ writingMode: "vertical-rl" }}
         >
@@ -144,7 +148,7 @@ export default function Home() {
           <main className="flex flex-col items-start justify-start min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto pt-32 md:pt-32 w-full">
             
             <div className="mb-4 pl-1">
-              <span className="text-gray-500 font-medium text-base tracking-wide transition-colors duration-300">
+              <span className="text-gray-600 font-medium text-base tracking-wide transition-colors duration-300">
                 {personal.greeting}
               </span>
             </div>
@@ -153,15 +157,13 @@ export default function Home() {
               <span className="block">{hero.headline.part1}</span>
             </h1>
 
-            <p className="max-w-xl text-lg text-gray-600 mb-8 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
+            <p className="max-w-xl text-lg text-gray-700 mb-8 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
               {hero.description}
             </p>
 
-
-
             {/* Tech Stack Section */}
             <div className="flex flex-col gap-4 mb-10 pl-1 w-full max-w-5xl">
-              <span className="uppercase tracking-[0.2em] text-xs font-extrabold text-blue-500/80">Powering Next-Gen Apps With</span>
+              <span className="uppercase tracking-[0.2em] text-xs font-extrabold text-blue-600">Powering Next-Gen Apps With</span>
               <div className="flex flex-wrap gap-2.5">
                 {stack.map((tech, index) => (
                   <TechBadge
@@ -175,26 +177,43 @@ export default function Home() {
             </div>
 
             {/* Key Stats / Highlights */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl pl-1 animate-fadeIn delay-300">
-              {about.stats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-start justify-center p-5 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-300 group">
-                   <span className="text-3xl md:text-4xl font-black text-gray-900 font-['Bangers'] tracking-wide group-hover:text-blue-600 transition-colors">
-                     {stat.value}
-                   </span>
-                   <span className="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">
-                     {stat.label}
-                   </span>
-                </div>
-              ))}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-3xl pl-1">
+              {about.stats.map((stat, index) => {
+                const icons = [Clock, Layers, Users];
+                const Icon = icons[index];
+                return (
+                  <div 
+                    key={index} 
+                    className="flex flex-col items-start justify-center p-3.5 bg-white/40 backdrop-blur-md border border-white/60 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden"
+                  >
+                    <div className="absolute -right-2 -top-2 opacity-5 group-hover:opacity-10 transition-opacity">
+                      {Icon && <Icon size={56} className="rotate-12" />}
+                    </div>
+                    <div className="flex flex-col relative z-10">
+                      <span className="text-2xl md:text-2xl font-black text-gray-900 font-['Bangers'] tracking-wide group-hover:text-blue-600 transition-colors">
+                        {stat.value}
+                      </span>
+                      <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mt-0.5">
+                        {stat.label}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
                {/* Dynamic Stat for Learning Projects */}
                {portfolioData.learningProjects && (
-                <div className="flex flex-col items-start justify-center p-5 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-                   <span className="text-3xl md:text-4xl font-black font-['Bangers'] tracking-wide">
-                     {portfolioData.learningProjects.length}+
-                   </span>
-                   <span className="text-[10px] md:text-xs font-bold text-blue-100 uppercase tracking-widest mt-1">
-                     R&D Experiments
-                   </span>
+                <div className="flex flex-col items-start justify-center p-3.5 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+                   <div className="absolute -right-2 -top-2 opacity-20">
+                      <Sparkles size={56} className="rotate-12" />
+                   </div>
+                   <div className="flex flex-col relative z-10">
+                     <span className="text-2xl md:text-2xl font-black font-['Bangers'] tracking-wide">
+                       {portfolioData.learningProjects.length}+
+                     </span>
+                     <span className="text-[10px] font-bold text-blue-50 uppercase tracking-widest mt-0.5">
+                       R&D Experiments
+                     </span>
+                   </div>
                 </div>
                )}
             </div>
@@ -207,7 +226,8 @@ export default function Home() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/50 backdrop-blur-sm rounded-xl text-gray-500 border border-gray-100 shadow-sm hover:text-blue-600 transition-colors duration-200"
+                  aria-label={social.label}
+                  className="p-3 bg-white/50 backdrop-blur-sm rounded-xl text-gray-600 border border-gray-100 shadow-sm hover:text-blue-600 transition-colors duration-200"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -216,39 +236,46 @@ export default function Home() {
           </main>
         </div>
 
-        <Suspense fallback={<SectionLoader />}>
-            {/* About Section */}
-            <div id="about" className="w-full">
+        {/* Deferred Sections */}
+        <div id="about" className="w-full">
+          <LazySection fallback={<SectionLoader />}>
             <About />
-            </div>
+          </LazySection>
+        </div>
 
-            {/* Experience Section */}
-            <div id="experience" className="w-full">
+        <div id="experience" className="w-full">
+          <LazySection fallback={<SectionLoader />}>
             <Experience />
-            </div>
+          </LazySection>
+        </div>
 
-            {/* Skills Section */}
-            <div id="skills" className="w-full">
+        <div id="skills" className="w-full">
+          <LazySection fallback={<SectionLoader />}>
             <Skills />
-            </div>
+          </LazySection>
+        </div>
 
-            {/* Projects Section */}
-            <div id="projects" className="w-full">
+        <div id="projects" className="w-full">
+          <LazySection fallback={<SectionLoader />}>
             <Projects />
-            </div>
+          </LazySection>
+        </div>
 
-            {/* Education Section */}
-            <div id="education" className="w-full">
+        <div id="education" className="w-full">
+          <LazySection fallback={<SectionLoader />}>
             <Education />
-            </div>
+          </LazySection>
+        </div>
 
-            {/* Contact Section */}
-            <div id="contact" className="w-full">
+        <div id="contact" className="w-full">
+          <LazySection fallback={<SectionLoader />}>
             <Contact />
-            </div>
+          </LazySection>
+        </div>
 
-            <Footer />
-        </Suspense>
+        <LazySection>
+          <Footer />
+        </LazySection>
 
         {/* Spacer for bottom nav visibility */}
         <div className="h-24"></div>

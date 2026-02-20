@@ -44,7 +44,7 @@ export default function Experience() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col items-start md:items-end gap-1 text-sm text-gray-500">
+                    <div className="flex flex-col items-start md:items-end gap-1 text-sm text-gray-600">
                         <span className="flex items-center gap-1.5">
                             <Calendar className="w-3.5 h-3.5" />
                             {job.duration}

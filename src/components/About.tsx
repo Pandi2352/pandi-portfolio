@@ -32,7 +32,7 @@ export default function About() {
                 <span className="text-3xl md:text-4xl font-bold text-blue-600 font-['Bangers'] tracking-wider group-hover:scale-110 transition-transform duration-300">
                   {stat.value}
                 </span>
-                <span className="text-xs font-bold text-gray-400 uppercase tracking-wider text-center">
+                <span className="text-xs font-bold text-gray-600 uppercase tracking-wider text-center">
                   {stat.label}
                 </span>
               </div>

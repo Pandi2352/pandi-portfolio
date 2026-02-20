@@ -23,7 +23,7 @@ export default function Footer() {
         {/* Social Links (Mobile only, desktop uses sidebar) */}
         <div className="flex md:hidden items-center gap-4">
             {socials.map((social, index) => (
-                <a key={index} href={social.href} className="text-gray-400 hover:text-blue-600 transition-colors">
+                <a key={index} href={social.href} aria-label={social.label} className="text-gray-400 hover:text-blue-600 transition-colors">
                     <social.icon className="w-4 h-4" />
                 </a>
             ))}
