@@ -1,26 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4PP9KB5TL"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-F4PP9KB5TL', { 'animate': false });
-    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Critical Font Preloads -->
+    <link rel="preload" href="/assets/inter-latin-400-normal-C38fXH4l.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/bangers-latin-400-normal-DeHY8Ncq.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/inter-latin-700-normal-Yt3aPRUw.woff2" as="font" type="font/woff2" crossorigin>
+    
     <style>
-      /* Critical CSS for Mobile LCP and initial load */
-      :root { --bg: #f8fafc; }
+      /* Critical CSS for Mobile LCP and instant rendering */
+      :root { 
+        --bg: #f8fafc; 
+        --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      }
+      body { margin: 0; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
       #root { background-color: var(--bg); min-height: 100vh; }
       .font-bangers { font-family: 'Bangers', cursive; font-display: swap; }
       #home { opacity: 0; animation: fadeIn 0.5s ease forwards; padding-top: 8rem; }
       
-      /* Tech Stack Placeholder to fix CLS on mobile */
+      /* Tech Stack Placeholder */
       .tech-stack-placeholder { min-height: 120px; margin-bottom: 2.5rem; }
       
       @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -120,5 +120,14 @@
     </div>
     
     <script type="module" src="/src/main.tsx" fetchpriority="high"></script>
+    
+    <!-- Google tag (gtag.js) deferred -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4PP9KB5TL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F4PP9KB5TL', { 'animate': false });
+    </script>
   </body>
 </html>
