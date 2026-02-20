@@ -1,17 +1,18 @@
 import { Github, Linkedin, Mail, Home as HomeIcon, User, Code, Briefcase, MessageCircle, Sparkles, Workflow, FileText, GraduationCap, Shapes, Link, Phone, Award } from 'lucide-react';
 import { SiTailwindcss, SiMongodb, SiReact, SiTypescript, SiDocker, SiNestjs, SiAngular, SiBootstrap, SiFigma, SiFlutter, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiApachekafka, SiRedis, SiSocketdotio, SiOpenai, SiGoogle, SiAnthropic, SiDiscord } from 'react-icons/si';
-import Resume from '../assets/Pandi_Selvam_Resume.pdf';
-import CertAngularComplete from '../assets/Udemy/Angular-complete_guide.pdf';
-import CertFlutterBloc from '../assets/Udemy/FlutterBloc-Udemy.pdf';
-import CertML from '../assets/Udemy/Indroductio_to_machine_learning_and_data_science.pdf';
-import CertMERN from '../assets/Udemy/MERN-Udemy.pdf';
-import CertNestJS from '../assets/Udemy/NestJS-Udemy.pdf';
-import CertOllama from '../assets/Udemy/ollama Begginers - Udemy.pdf';
-import CertPython from '../assets/Udemy/Python Basics - Udemy.pdf';
-import CertRemix from '../assets/Udemy/Remix - Udemy.pdf';
-import CertAngularCrash from '../assets/Udemy/Udemy - Angular crash course.pdf';
-import CertBootstrap from '../assets/Udemy/Udemy - Bootstrap.pdf';
-import CertNPM from '../assets/Udemy/Udemy - npm.pdf';
+// PDFs served from public/ folder as static files
+const Resume = '/Pandi_Selvam_Resume.pdf';
+const CertAngularComplete = '/certificates/Angular-complete_guide.pdf';
+const CertFlutterBloc = '/certificates/FlutterBloc-Udemy.pdf';
+const CertML = '/certificates/Indroductio_to_machine_learning_and_data_science.pdf';
+const CertMERN = '/certificates/MERN-Udemy.pdf';
+const CertNestJS = '/certificates/NestJS-Udemy.pdf';
+const CertOllama = '/certificates/Ollama-Udemy.pdf';
+const CertPython = '/certificates/Python-Basics-Udemy.pdf';
+const CertRemix = '/certificates/Remix-Udemy.pdf';
+const CertAngularCrash = '/certificates/Angular-Crash-Course-Udemy.pdf';
+const CertBootstrap = '/certificates/Bootstrap-Udemy.pdf';
+const CertNPM = '/certificates/NPM-Udemy.pdf';
 
 export const portfolioData = {
     personal: {
