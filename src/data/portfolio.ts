@@ -1,6 +1,17 @@
-import { Github, Linkedin, Mail, Home as HomeIcon, User, Code, Briefcase, MessageCircle, Sparkles, Workflow, FileText, GraduationCap, Shapes, Link, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Home as HomeIcon, User, Code, Briefcase, MessageCircle, Sparkles, Workflow, FileText, GraduationCap, Shapes, Link, Phone, Award } from 'lucide-react';
 import { SiTailwindcss, SiMongodb, SiReact, SiTypescript, SiDocker, SiNestjs, SiAngular, SiBootstrap, SiFigma, SiFlutter, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiApachekafka, SiRedis, SiSocketdotio, SiOpenai, SiGoogle, SiAnthropic, SiDiscord } from 'react-icons/si';
 import Resume from '../assets/Pandi_Selvam_Resume.pdf';
+import CertAngularComplete from '../assets/Udemy/Angular-complete_guide.pdf';
+import CertFlutterBloc from '../assets/Udemy/FlutterBloc-Udemy.pdf';
+import CertML from '../assets/Udemy/Indroductio_to_machine_learning_and_data_science.pdf';
+import CertMERN from '../assets/Udemy/MERN-Udemy.pdf';
+import CertNestJS from '../assets/Udemy/NestJS-Udemy.pdf';
+import CertOllama from '../assets/Udemy/ollama Begginers - Udemy.pdf';
+import CertPython from '../assets/Udemy/Python Basics - Udemy.pdf';
+import CertRemix from '../assets/Udemy/Remix - Udemy.pdf';
+import CertAngularCrash from '../assets/Udemy/Udemy - Angular crash course.pdf';
+import CertBootstrap from '../assets/Udemy/Udemy - Bootstrap.pdf';
+import CertNPM from '../assets/Udemy/Udemy - npm.pdf';
 
 export const portfolioData = {
     personal: {
@@ -52,6 +63,7 @@ export const portfolioData = {
         { label: "Skills", icon: Shapes },
         { label: "Projects", icon: Code },
         { label: "Education", icon: GraduationCap },
+        { label: "Certificates", icon: Award },
         { label: "Contact", icon: MessageCircle }
     ],
     about: {
@@ -423,6 +435,96 @@ export const portfolioData = {
             tech: ["Python"],
             type: "Internship",
             location: "Chennai"
+        }
+    ],
+    certificates: [
+        {
+            name: "React, NodeJS, Express & MongoDB - The MERN Fullstack Guide",
+            instructor: "Maximilian Schwarzmuller",
+            date: "May 2024",
+            category: "Full-Stack",
+            pdf: CertMERN,
+            certificateId: "UC-86404510-94e1-455d-9eb0-680e6c243dd7"
+        },
+        {
+            name: "NestJS Zero to Hero - Modern TypeScript Back-end Development",
+            instructor: "Ariel Weinberger",
+            date: "Sept 2023",
+            category: "Backend",
+            pdf: CertNestJS,
+            certificateId: "UC-1f82d4c2-5879-43cf-b7d6-f436e465534b"
+        },
+        {
+            name: "Angular - The Complete Guide (2023 Edition)",
+            instructor: "Maximilian Schwarzmuller",
+            date: "July 2023",
+            category: "Frontend",
+            pdf: CertAngularComplete,
+            certificateId: "UC-084a59de-d5a2-4619-9732-7b8fcdcda45b"
+        },
+        {
+            name: "Remix.js - The Practical Guide",
+            instructor: "Maximilian Schwarzmuller",
+            date: "Oct 2024",
+            category: "Frontend",
+            pdf: CertRemix,
+            certificateId: "UC-e6745184-7256-49b4-9e58-262bf5a7eda4"
+        },
+        {
+            name: "Flutter BLoC - From Zero to Hero Complete Course",
+            instructor: "Tiberiu Potec",
+            date: "Feb 2024",
+            category: "Mobile",
+            pdf: CertFlutterBloc,
+            certificateId: "UC-f154913c-1309-4c1a-b452-b417185816c5"
+        },
+        {
+            name: "Ollama Zero to Hero: Build Chat, Vision Games & AI Agents",
+            instructor: "Yash Thakker",
+            date: "Feb 2025",
+            category: "AI",
+            pdf: CertOllama,
+            certificateId: "UC-1fc9b5a0-5e33-4553-a2bc-4163527345ed"
+        },
+        {
+            name: "Introduction to Machine Learning for Data Science",
+            instructor: "David Valentine",
+            date: "Aug 2024",
+            category: "AI",
+            pdf: CertML,
+            certificateId: "UC-14e5551e-1c41-4b88-8c24-cbf18e224007"
+        },
+        {
+            name: "Bootstrap 5 From Scratch | Build 5 Modern Websites",
+            instructor: "Brad Traversy",
+            date: "July 2024",
+            category: "Frontend",
+            pdf: CertBootstrap,
+            certificateId: "UC-e965e1da-493b-4090-9b52-779b0721b503"
+        },
+        {
+            name: "Angular Crash Course for Busy Developers",
+            instructor: "Mosh Hamedani",
+            date: "May 2024",
+            category: "Frontend",
+            pdf: CertAngularCrash,
+            certificateId: "UC-f86630a6-10eb-49c2-b9f3-506627365bdc"
+        },
+        {
+            name: "Python for Absolute Beginners",
+            instructor: "Green Chameleon Learning",
+            date: "June 2024",
+            category: "Backend",
+            pdf: CertPython,
+            certificateId: "UC-eb2b46d3-6c3b-48e2-b5ed-ff39c1f3c715"
+        },
+        {
+            name: "Understanding NPM - Node.js Package Manager",
+            instructor: "Bogdan Stashchuk",
+            date: "June 2024",
+            category: "Tools",
+            pdf: CertNPM,
+            certificateId: "UC-53ed7c10-344a-4e4b-8be1-6094273dc636"
         }
     ],
     contact: {

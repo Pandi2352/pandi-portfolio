@@ -7,6 +7,7 @@ const Education = lazy(() => import("./Education"));
 const Skills = lazy(() => import("./Skills"));
 const Projects = lazy(() => import("./Projects"));
 const Experience = lazy(() => import("./Experience"));
+const Certificates = lazy(() => import("./Certificates"));
 const Contact = lazy(() => import("./Contact"));
 const Footer = lazy(() => import("./Footer"));
 
@@ -264,6 +265,12 @@ export default function Home() {
         <div id="education" className="w-full">
           <LazySection fallback={<SectionLoader />}>
             <Education />
+          </LazySection>
+        </div>
+
+        <div id="certificates" className="w-full">
+          <LazySection fallback={<SectionLoader />}>
+            <Certificates />
           </LazySection>
         </div>
 
