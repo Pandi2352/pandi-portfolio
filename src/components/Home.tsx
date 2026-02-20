@@ -162,7 +162,7 @@ export default function Home() {
             </p>
 
             {/* Tech Stack Section */}
-            <div className="flex flex-col gap-4 mb-10 pl-1 w-full max-w-5xl">
+            <div className="flex flex-col gap-4 mb-10 pl-1 w-full max-w-5xl min-h-[100px]">
               <span className="uppercase tracking-[0.2em] text-xs font-extrabold text-blue-600">Powering Next-Gen Apps With</span>
               <div className="flex flex-wrap gap-2.5">
                 {stack.map((tech, index) => (
