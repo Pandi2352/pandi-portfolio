@@ -14,11 +14,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <style>
-      /* Critical CSS for LCP and initial load */
-      #root { background-color: #f8fafc; min-height: 100vh; }
-      .font-bangers { font-family: 'Bangers', cursive; }
-      #home { opacity: 0; animation: fadeIn 0.5s ease forwards; }
+      /* Critical CSS for Mobile LCP and initial load */
+      :root { --bg: #f8fafc; }
+      #root { background-color: var(--bg); min-height: 100vh; }
+      .font-bangers { font-family: 'Bangers', cursive; font-display: swap; }
+      #home { opacity: 0; animation: fadeIn 0.5s ease forwards; padding-top: 8rem; }
+      
+      /* Tech Stack Placeholder to fix CLS on mobile */
+      .tech-stack-placeholder { min-height: 120px; margin-bottom: 2.5rem; }
+      
       @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+      
+      @media (max-width: 768px) {
+        #home { padding-top: 6rem; text-align: left; }
+        h1 { font-size: 2.25rem; line-height: 2.5rem; }
+      }
     </style>
     
     
@@ -109,6 +119,6 @@
       </footer>
     </div>
     
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" fetchpriority="high"></script>
   </body>
 </html>

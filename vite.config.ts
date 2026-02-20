@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import viteCompression from 'vite-plugin-compression'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -26,6 +27,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    cssInjectedByJsPlugin(),
     viteCompression({
       algorithm: 'brotliCompress',
       ext: '.br',
