@@ -62,6 +62,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2}'],
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/\.pdf$/, /\/certificates\//, /\/Pandi_Selvam_Resume/],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
