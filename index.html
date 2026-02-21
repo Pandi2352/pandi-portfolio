@@ -95,30 +95,166 @@
     </noscript>
     
     <div id="root">
-      <!-- Static SEO Content (Visible in View Source) -->
-      <header style="display:none">
-        <h1>Pandi Selvam | Senior Full-Stack Developer & Team Lead</h1>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-      <main style="display:none">
+      <!-- PREMIUM PRELOADER: Visible immediately while JS is loading -->
+      <style>
+        .preloader-container {
+          position: fixed;
+          inset: 0;
+          background: #ffffff;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          font-family: system-ui, -apple-system, sans-serif;
+          overflow: hidden;
+        }
+        /* Soft light glow in background */
+        .preloader-container::before {
+          content: '';
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+          border-radius: 50%;
+          animation: pulse 4s ease-in-out infinite;
+        }
+        .loader-wrapper {
+          position: relative;
+          width: 100px;
+          height: 100px;
+        }
+        .loader-ring {
+          position: absolute;
+          inset: 0;
+          border: 3px solid rgba(59, 130, 246, 0.08);
+          border-top-color: #3b82f6;
+          border-radius: 50%;
+          animation: spin 1s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+        }
+        .loader-pulse {
+          position: absolute;
+          inset: 15px;
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+          border-radius: 50%;
+          animation: pulse 2s ease-in-out infinite;
+        }
+        .loader-text {
+          margin-top: 32px;
+          color: #1e293b;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 0.4em;
+          text-transform: uppercase;
+          opacity: 0.6;
+        }
+        .initials {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #1e293b;
+          font-weight: 900;
+          font-size: 24px;
+          letter-spacing: 1px;
+        }
+        @keyframes spin { 
+          from { transform: rotate(0deg); } 
+          to { transform: rotate(360deg); } 
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(0.9); opacity: 0.4; }
+          50% { transform: scale(1.2); opacity: 0.8; }
+        }
+      </style>
+      <div class="preloader-container" id="preloader">
+        <div class="loader-wrapper">
+          <div class="loader-ring"></div>
+          <div class="loader-pulse"></div>
+          <div class="initials">PS</div>
+        </div>
+        <div class="loader-text">Initializing Experience</div>
+      </div>
+
+      <!-- STATIC SKELETON: For SEO/Curl (Hidden from view) -->
+      <div style="display: none;">
+        <header>
+          <h1>Pandi Selvam | Senior Full-Stack Developer & Team Lead</h1>
+          <p>Location: Sivakasi, Tamil Nadu, India | Email: mvp.bose23@gmail.com</p>
+          <nav>
+            <a href="#about">About</a> | <a href="#experience">Experience</a> | <a href="#projects">Projects</a> | <a href="#skills">Skills</a>
+          </nav>
+        </header>
+
         <section id="hero">
-          <h2>FULL-STACK DEVELOPER</h2>
+          <hr />
+          <h2>Full-Stack Developer Specializing in MERN, Next.js, and AI</h2>
           <p>Turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions. Focused on performance, quality, and mentorship.</p>
         </section>
-        <section id="about-summary">
-          <h3>About Pandi Selvam</h3>
-          <p>Full-Stack Developer & Team Lead with over 2.5 years of experience in building scalable, high-performance applications. Specialist in MERN stack, Next.js, and AI automation.</p>
+
+        <section id="achievements">
+          <hr />
+          <h2>🏆 Awards & Recognition</h2>
+          <p><strong>Star Performer of the Quarter (April - June 2025):</strong> Awarded by Skillmine Technology for outstanding contribution and leadership performance.</p>
         </section>
-      </main>
-      <footer style="display:none">
-        <p>&copy; 2026 Pandi Selvam. Based in Sivakasi, Tamil Nadu, India.</p>
-      </footer>
+
+        <section id="about">
+          <hr />
+          <h2>About Me</h2>
+          <p>Full-Stack Developer & Team Lead with over 2.5 years of experience. Specialist in building high-performance applications with React, Node.js, and Cloud architectures.</p>
+          <ul>
+            <li>Years of Experience: 2.5+</li>
+            <li>Projects Led: 8+</li>
+            <li>Team Size: 5+</li>
+          </ul>
+        </section>
+
+        <section id="experience">
+          <hr />
+          <h2>Professional Experience</h2>
+          <article>
+            <h3>Team Lead @ Skillmine Technology</h3>
+            <p>June 2025 - Present | Sivakasi</p>
+            <p>Spearheading development for key client projects and overseeing the end-to-end delivery lifecycle. Architectural decision-making and mentoring junior developers.</p>
+          </article>
+          <article>
+            <h3>Junior Software Developer @ Skillmine Technology</h3>
+            <p>May 2024 - May 2025</p>
+          </article>
+        </section>
+
+        <section id="projects">
+          <hr />
+          <h2>Key Projects</h2>
+          <ul>
+            <li><strong>Document Management System (DMS):</strong> AI-powered enterprise solution.</li>
+            <li><strong>First Credit System (FCS):</strong> Debt recovery platform with compliance logic.</li>
+            <li><strong>AI Sales Agent:</strong> Multi-agent research pipeline (R&D).</li>
+            <li><strong>AISprintForge:</strong> AI-powered sprint intelligence platform.</li>
+          </ul>
+        </section>
+
+        <section id="skills">
+          <hr />
+          <h2>Technical Skills</h2>
+          <p><strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS, Angular</p>
+          <p><strong>Backend:</strong> Node.js, NestJS, Python, FastAPI, MongoDB, Kafka</p>
+          <p><strong>AI & Tools:</strong> Gemini AI, LangChain, Docker, Figma</p>
+        </section>
+
+        <section id="education">
+          <hr />
+          <h2>Education</h2>
+          <p><strong>MCA:</strong> V.H.N.S.N College (2023) - 75.3%</p>
+          <p><strong>BCA:</strong> A.N.J.A College (2020) - 60%</p>
+        </section>
+
+        <footer>
+          <hr />
+          <p>&copy; 2026 Pandi Selvam. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
     
     <script type="module" src="/src/main.tsx" fetchpriority="high"></script>
