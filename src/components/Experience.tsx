@@ -43,11 +43,11 @@ export default function Experience() {
                       </div>
                       <div className="flex items-center gap-3 sm:flex-col sm:items-end sm:gap-1 text-xs text-gray-500 shrink-0">
                           <span className="flex items-center gap-1">
-                              <Calendar className="w-3 h-3 text-gray-400" />
+                              <Calendar className="w-3 h-3 text-gray-500" />
                               {job.duration}
                           </span>
                           <span className="flex items-center gap-1">
-                              <MapPin className="w-3 h-3 text-gray-400" />
+                              <MapPin className="w-3 h-3 text-gray-500" />
                               {job.location}
                           </span>
                       </div>
@@ -55,7 +55,7 @@ export default function Experience() {
 
                   {/* Company + Type */}
                   <div className="flex items-center gap-2 mb-3">
-                      <Building2 className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                      <Building2 className="w-3.5 h-3.5 text-gray-500 shrink-0" />
                       <span className="text-sm font-semibold text-gray-600">{job.company}</span>
                       <span className="text-[10px] sm:text-xs px-2 py-0.5 bg-blue-100 rounded text-blue-700 border border-blue-200 font-bold shrink-0">
                           {job.type}

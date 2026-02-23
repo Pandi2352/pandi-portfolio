@@ -32,7 +32,7 @@ export default function About() {
                 <span className="text-3xl md:text-4xl font-black text-slate-900 font-['Bangers'] tracking-wider group-hover:text-blue-600 transition-colors duration-300">
                   {stat.value}
                 </span>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center">
                   {stat.label}
                 </span>
               </div>
@@ -49,11 +49,13 @@ export default function About() {
               <div className="absolute inset-0 bg-blue-500/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative p-1 bg-white rounded-xl border border-slate-50 overflow-hidden">
                 <div className="overflow-hidden rounded-lg">
-                  <img 
-                    src="/award.png" 
-                    alt="Star Award - Skillmine" 
+                  <img
+                    src="/award.webp"
+                    alt="Star Award - Skillmine"
                     loading="lazy"
                     decoding="async"
+                    width="256"
+                    height="384"
                     className="w-24 md:w-28 h-auto object-cover transform group-hover:scale-150 transition-transform duration-700 ease-in-out"
                   />
                 </div>

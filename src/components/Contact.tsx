@@ -86,7 +86,7 @@ export default function Contact() {
 
       {/* Quote Section */}
       <div className="mt-10 md:mt-16 text-center reveal reveal-delay-4 px-4" data-reveal>
-        <blockquote className="text-xl md:text-2xl font-light italic text-gray-400 font-['Bangers'] tracking-wider opacity-80 hover:opacity-100 transition-opacity">
+        <blockquote className="text-xl md:text-2xl font-light italic text-gray-500 font-['Bangers'] tracking-wider opacity-80 hover:opacity-100 transition-opacity">
           "Never forget what you are. The internet will not. Wear it like armor."
         </blockquote>
       </div>

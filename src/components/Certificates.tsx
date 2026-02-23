@@ -109,13 +109,13 @@ export default function Certificates() {
 
                 {/* Instructor */}
                 <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium relative z-10">
-                  <User className="w-3.5 h-3.5 text-gray-400" />
+                  <User className="w-3.5 h-3.5 text-gray-500" />
                   <span className="truncate">{cert.instructor}</span>
                 </div>
 
                 {/* Footer */}
                 <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100 relative z-10">
-                  <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium">
+                  <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium">
                     <Calendar className="w-3.5 h-3.5" />
                     {cert.date}
                   </div>
@@ -126,7 +126,7 @@ export default function Certificates() {
                 </div>
 
                 {/* Certificate ID */}
-                <div className="text-[9px] font-mono text-gray-300 tracking-wider relative z-10 select-none">
+                <div className="text-[9px] font-mono text-gray-500 tracking-wider relative z-10 select-none">
                   {cert.certificateId.slice(0, 20)}...
                 </div>
               </div>

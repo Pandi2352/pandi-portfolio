@@ -44,7 +44,7 @@ export default function Education() {
                   {item.institution}
                 </p>
 
-                <div className="flex items-center gap-1 text-[11px] text-gray-400">
+                <div className="flex items-center gap-1 text-[11px] text-gray-500">
                   <MapPin className="w-3 h-3" />
                   {item.location}
                 </div>
@@ -94,7 +94,7 @@ export default function Education() {
                       </span>
                     </div>
 
-                    <div className={`flex items-center gap-2 text-xs text-gray-400 font-medium ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                    <div className={`flex items-center gap-2 text-xs text-gray-500 font-medium ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                       <MapPin className="w-3.5 h-3.5" />
                       {item.location}
                     </div>
