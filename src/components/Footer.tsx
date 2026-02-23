@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
 
         {/* Tech Stack Credit */}
-        <div className="flex items-center gap-1.5 text-sm text-gray-400">
+        <div className="flex items-center gap-1.5 text-sm text-gray-500">
           <span>Built with</span>
           <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400/20" />
           <span>using React & Tailwind</span>
@@ -23,7 +23,7 @@ export default function Footer() {
         {/* Social Links (Mobile only, desktop uses sidebar) */}
         <div className="flex md:hidden items-center gap-4">
             {socials.map((social, index) => (
-                <a key={index} href={social.href} aria-label={social.label} className="text-gray-400 hover:text-blue-600 transition-colors">
+                <a key={index} href={social.href} aria-label={social.label} className="text-gray-500 hover:text-blue-600 transition-colors">
                     <social.icon className="w-4 h-4" />
                 </a>
             ))}
