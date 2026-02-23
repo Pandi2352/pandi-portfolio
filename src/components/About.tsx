@@ -54,8 +54,8 @@ export default function About() {
                     alt="Star Award - Skillmine"
                     loading="lazy"
                     decoding="async"
-                    width="256"
-                    height="384"
+                    width="168"
+                    height="252"
                     className="w-24 md:w-28 h-auto object-cover transform group-hover:scale-150 transition-transform duration-700 ease-in-out"
                   />
                 </div>
