@@ -103,8 +103,8 @@ export default function Home() {
     <div className="relative min-h-screen text-gray-900 font-['Inter'] overflow-x-hidden selection:bg-blue-200 selection:text-blue-900 transition-colors duration-500">
       <AnimatedBackground />
       {/* Top Navigation / Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 md:py-6 pointer-events-none">
-        <div className="text-2xl md:text-3xl font-normal tracking-wide text-gray-900 font-['Bangers'] select-none uppercase transition-colors duration-300 pointer-events-auto">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-12 py-3 sm:py-4 md:py-6 pointer-events-none">
+        <div className="text-xl sm:text-2xl md:text-3xl font-normal tracking-wide text-gray-900 font-['Bangers'] select-none uppercase transition-colors duration-300 pointer-events-auto truncate max-w-[50vw] sm:max-w-none">
           {personal.name.toUpperCase()}
           <span className="text-blue-600">
             {" "}
@@ -179,7 +179,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col items-center w-full">
         {/* Main Hero Section */}
         <div id="home" className="w-full mt-10">
-          <main className="flex flex-col items-start justify-start min-h-screen px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto w-full">
+          <main className="flex flex-col items-start justify-start min-h-[100dvh] px-4 sm:px-6 md:px-12 text-left max-w-full md:max-w-6xl mx-auto w-full">
             
             <div className="mb-4 pl-1">
               <span className="text-gray-600 font-medium text-base tracking-wide transition-colors duration-300">
@@ -187,17 +187,17 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-normal tracking-wide text-gray-900 mb-2 leading-[0.95] font-['Bangers'] transition-colors duration-300 drop-shadow-sm">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-normal tracking-wide text-gray-900 mb-2 leading-[0.95] font-['Bangers'] transition-colors duration-300 drop-shadow-sm">
               <span className="block">{hero.headline.part1}</span>
             </h1>
 
-            <p className="max-w-xl text-lg text-gray-700 mb-8 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
+            <p className="max-w-xl text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed text-left pl-1 transition-colors duration-300 font-medium">
               {hero.description}
             </p>
 
             {/* Tech Stack Section */}
-            <div className="flex flex-col gap-4 mb-10 pl-1 w-full max-w-5xl min-h-[100px] tech-stack-placeholder">
-              <span className="uppercase tracking-[0.2em] text-xs font-extrabold text-blue-600">Powering Next-Gen Apps With</span>
+            <div className="flex flex-col gap-3 sm:gap-4 mb-8 sm:mb-10 pl-1 w-full max-w-5xl min-h-[80px] sm:min-h-[100px] tech-stack-placeholder">
+              <span className="uppercase tracking-[0.2em] text-xs font-black text-blue-700">Powering Next-Gen Apps With</span>
               <div className="flex flex-wrap gap-2.5">
                 {stack.map((tech, index) => (
                   <TechBadge
@@ -211,7 +211,7 @@ export default function Home() {
             </div>
 
             {/* Key Stats / Highlights */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 w-full max-w-3xl pl-1">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 w-full max-w-3xl pl-1">
               {about.stats.map((stat, index) => {
                 const icons = [Clock, Layers, Users];
                 const Icon = icons[index];
@@ -308,8 +308,8 @@ export default function Home() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-40 max-w-[95%] w-fit pointer-events-none">
-        <nav className="flex items-center gap-1 bg-white/90 backdrop-blur-xl border border-gray-200 shadow-sm px-2 sm:px-3 py-2 rounded-2xl pointer-events-auto overflow-x-auto no-scrollbar transition-all duration-300">
+      <div className="fixed bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-40 max-w-[96%] sm:max-w-[95%] w-fit pointer-events-none">
+        <nav className="flex items-center gap-0.5 sm:gap-1 bg-white/90 backdrop-blur-xl border border-gray-200 shadow-sm px-1.5 sm:px-3 py-1.5 sm:py-2 rounded-2xl pointer-events-auto overflow-x-auto no-scrollbar transition-all duration-300">
           <div className="flex items-center gap-1">
             {nav.map((item, index) => (
               <NavLink
@@ -361,7 +361,7 @@ const TechBadge = memo(({
 }) => {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-sm font-bold border ${color} shadow-sm whitespace-nowrap`}
+      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-extrabold border ${color} shadow-sm whitespace-nowrap`}
     >
       {icon}
       {text}
@@ -387,7 +387,7 @@ const NavLink = memo(({
       onClick={onClick}
       aria-label={label}
       title={label}
-      className={`p-3 rounded-xl transition-colors duration-200 shrink-0 cursor-pointer ${active ? "text-gray-900 bg-white shadow-sm border border-gray-100" : "text-gray-500 hover:text-gray-900 hover:bg-white/50"}`}
+      className={`p-2 sm:p-3 rounded-xl transition-colors duration-200 shrink-0 cursor-pointer ${active ? "text-gray-900 bg-white shadow-sm border border-gray-100" : "text-gray-500 hover:text-gray-900 hover:bg-white/50"}`}
     >
       {icon}
     </button>

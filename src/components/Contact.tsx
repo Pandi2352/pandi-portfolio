@@ -5,7 +5,7 @@ export default function Contact() {
   const { contact, personal } = portfolioData;
 
   return (
-    <section className="relative w-full max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col items-center gap-8 md:gap-12 text-center">
+    <section className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20 flex flex-col items-center gap-8 md:gap-12 text-center">
       
       {/* Section Title */}
       <h2 className="text-4xl md:text-6xl font-['Bangers'] text-gray-900 tracking-wide reveal" data-reveal>
@@ -21,7 +21,7 @@ export default function Contact() {
         
         {/* Contact Details Card */}
         <div className="w-full md:w-1/3 flex flex-col gap-6 text-left reveal reveal-delay-2" data-reveal>
-          <div className="p-5 sm:p-6 bg-white border border-gray-200">
+          <div className="p-5 sm:p-6 bg-white border border-gray-200 rounded-2xl">
             <h3 className="text-2xl font-['Bangers'] text-gray-800 mb-3">Get in Touch</h3>
             
             <div className="flex flex-col gap-5">
@@ -68,7 +68,7 @@ export default function Contact() {
         </div>
 
         {/* Map */}
-        <div className="w-full md:w-2/3 h-[300px] sm:h-[400px] bg-gray-100 overflow-hidden shadow-sm border border-gray-200 reveal reveal-delay-3" data-reveal>
+        <div className="w-full md:w-2/3 h-[250px] sm:h-[400px] bg-gray-100 overflow-hidden shadow-sm border border-gray-200 rounded-2xl reveal reveal-delay-3" data-reveal>
           <iframe 
             src={contact.mapUrl} 
             width="100%" 

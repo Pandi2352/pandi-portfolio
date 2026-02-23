@@ -4,7 +4,7 @@ export default function About() {
   const { about } = portfolioData;
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col items-start gap-12">
+    <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 flex flex-col items-start gap-8 sm:gap-12">
       
       {/* Section Title */}
       <h2 className="text-4xl md:text-6xl font-['Bangers'] text-gray-900 tracking-wide reveal px-2" data-reveal>
@@ -13,7 +13,7 @@ export default function About() {
       </h2>
 
       {/* Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full mb-8 px-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 w-full mb-8 px-0 sm:px-2">
         {/* Left Column: Bio */}
         <div className="flex flex-col gap-6 reveal reveal-delay-1" data-reveal>
           <div className="flex flex-col gap-4 text-base md:text-lg text-gray-600 leading-relaxed font-medium">
@@ -40,7 +40,7 @@ export default function About() {
           </div>
 
           {/* Award Card - Filling the empty space */}
-          <div className="relative group overflow-hidden bg-white rounded-[2rem] p-6 md:p-8 shadow-[0_15px_40px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1.5 border border-slate-100 flex flex-col sm:flex-row items-center gap-8 text-left">
+          <div className="relative group overflow-hidden bg-white rounded-2xl sm:rounded-[2rem] p-5 sm:p-6 md:p-8 shadow-[0_15px_40px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1.5 border border-slate-100 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-left">
             {/* Ambient Background */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50/50 rounded-full -translate-y-1/2 translate-x-1/2 blur-[80px] group-hover:bg-blue-100/50 transition-colors duration-700"></div>
             
@@ -52,6 +52,8 @@ export default function About() {
                   <img 
                     src="/award.png" 
                     alt="Star Award - Skillmine" 
+                    loading="lazy"
+                    decoding="async"
                     className="w-24 md:w-28 h-auto object-cover transform group-hover:scale-150 transition-transform duration-700 ease-in-out"
                   />
                 </div>
@@ -80,16 +82,16 @@ export default function About() {
       </div>
 
       {/* Specializations - Full Width Below */}
-      <div className="w-full bg-slate-50 border border-slate-200/60 rounded-[2.5rem] p-8 md:p-12 reveal reveal-delay-4" data-reveal>
+      <div className="w-full bg-slate-50 border border-slate-200/60 rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 reveal reveal-delay-4" data-reveal>
         <h3 className="text-2xl font-['Bangers'] text-slate-900 tracking-wider flex items-center gap-4 mb-8">
           <span className="w-2 h-8 bg-blue-600 rounded-full"></span>
           CORE SPECIALIZATIONS & EXPERTISE
         </h3>
         <div className="flex flex-wrap gap-3">
           {about.interests.map((interest) => (
-            <span 
-              key={interest} 
-              className="px-6 py-3 bg-white text-slate-600 text-base font-bold rounded-2xl border border-slate-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-default select-none shadow-sm"
+            <span
+              key={interest}
+              className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-slate-600 text-sm sm:text-base font-bold rounded-xl sm:rounded-2xl border border-slate-200 hover:border-blue-400 hover:text-blue-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 cursor-default select-none shadow-sm"
             >
               {interest}
             </span>

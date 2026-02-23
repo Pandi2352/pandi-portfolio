@@ -25,7 +25,7 @@ export default function Certificates() {
     cat === "All" ? certificates.length : certificates.filter(c => c.category === cat).length;
 
   return (
-    <section className="relative w-full max-w-5xl mx-auto px-6 py-12 md:py-20 flex flex-col items-start gap-12">
+    <section className="relative w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20 flex flex-col items-start gap-12">
 
       {/* Section Header */}
       <div className="flex flex-col gap-4 w-full">
@@ -69,7 +69,7 @@ export default function Certificates() {
       </div>
 
       {/* Certificates Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 w-full">
         {filtered.map((cert, index) => {
           const colors = categoryConfig[cert.category] || categoryConfig["Tools"];
           return (

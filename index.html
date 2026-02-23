@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     
     <!-- Critical Font Preloads -->
@@ -19,13 +20,18 @@
       #root { background-color: var(--bg); min-height: 100vh; }
       .font-bangers { font-family: 'Bangers', cursive; font-display: swap; }
       #home { opacity: 0; animation: fadeIn 0.5s ease forwards; padding-top: 8rem; }
-      
+
       /* Tech Stack Placeholder */
       .tech-stack-placeholder { min-height: 120px; margin-bottom: 2.5rem; }
-      
+
       @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-      
-      @media (max-width: 768px) {
+
+      @media (max-width: 640px) {
+        #home { padding-top: 5rem; text-align: left; }
+        h1 { font-size: 1.875rem; line-height: 2.25rem; }
+        .tech-stack-placeholder { min-height: 80px; margin-bottom: 2rem; }
+      }
+      @media (min-width: 641px) and (max-width: 768px) {
         #home { padding-top: 6rem; text-align: left; }
         h1 { font-size: 2.25rem; line-height: 2.5rem; }
       }
@@ -60,37 +66,47 @@
     <link rel="canonical" href="https://pandiselvam.in/" />
     <link rel="manifest" href="/manifest.json" />
 
-    <link rel="apple-touch-icon" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandi Selvam | Senior Full-Stack Developer</title>
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Pandi Selvam",
-      "jobTitle": "Senior Full-Stack Developer",
+      "jobTitle": "Senior Full-Stack Developer & Team Lead",
       "url": "https://pandiselvam.in/",
+      "image": "https://pandiselvam.in/og.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sivakasi",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "India"
+      },
+      "email": "mvp.bose23@gmail.com",
+      "telephone": "+91 9655396956",
       "sameAs": [
-        "https://linkedin.com/in/mvp-bose",
+        "https://linkedin.com/in/pandi-selvam-p-1ab62b2a1",
         "https://github.com/Pandi2352",
         "https://twitter.com/mvp_bose"
       ],
-      "knowsAbout": ["Full Stack Development", "MERN Stack", "Next.js", "AI Agents", "Web3", "System Architecture", "Leadership"]
+      "knowsAbout": ["MERN Stack", "Next.js", "AI Agentic Workflows", "System Design", "Cloud Computing", "Team Leadership"],
+      "description": "Senior Full-Stack Developer & Team Lead specializing in building scalable AI systems and enterprise web applications."
     }
     </script>
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="Pandi Selvam" />
-    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   </head>
   <body>
     <noscript>
-      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
-        <h1>Pandi Selvam | Senior Full-Stack Developer</h1>
-        <p>Turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions.</p>
-        <p>You need to enable JavaScript to run this app properly.</p>
+      <div style="padding: 40px; text-align: center; font-family: system-ui, sans-serif; line-height: 1.6; color: #333;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Pandi Selvam | Senior Full-Stack Developer</h1>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">Turning ideas into scalable, production-ready applications. Specialist in React, Node.js, and Agentic AI.</p>
+        <p>Your browser does not support JavaScript or it is disabled. Please enable it for the full interactive experience.</p>
+        <hr style="margin: 40px auto; width: 60px;">
+        <div style="display: flex; gap: 20px; justify-content: center;">
+          <a href="#about">About</a> <a href="#experience">Experience</a> <a href="#projects">Projects</a> <a href="#contact">Contact</a>
+        </div>
       </div>
     </noscript>
     
@@ -109,7 +125,6 @@
           font-family: system-ui, -apple-system, sans-serif;
           overflow: hidden;
         }
-        /* Soft light glow in background */
         .preloader-container::before {
           content: '';
           position: absolute;
@@ -159,10 +174,7 @@
           font-size: 24px;
           letter-spacing: 1px;
         }
-        @keyframes spin { 
-          from { transform: rotate(0deg); } 
-          to { transform: rotate(360deg); } 
-        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         @keyframes pulse {
           0%, 100% { transform: scale(0.9); opacity: 0.4; }
           50% { transform: scale(1.2); opacity: 0.8; }
@@ -176,84 +188,81 @@
         </div>
         <div class="loader-text">Initializing Experience</div>
       </div>
+      <!-- STATIC SKELETON: Achieves 'Static SSR' for Search Engines & Terminal Tools -->
+      <div style="display: none;" aria-hidden="true">
+        <article id="ssr-content">
+          <header>
+            <h1>Pandi Selvam</h1>
+            <p>Senior Full-Stack Developer & Team Lead</p>
+            <p>Location: Sivakasi, Tamil Nadu, India | Email: mvp.bose23@gmail.com</p>
+          </header>
 
-      <!-- STATIC SKELETON: For SEO/Curl (Hidden from view) -->
-      <div style="display: none;">
-        <header>
-          <h1>Pandi Selvam | Senior Full-Stack Developer & Team Lead</h1>
-          <p>Location: Sivakasi, Tamil Nadu, India | Email: mvp.bose23@gmail.com</p>
-          <nav>
-            <a href="#about">About</a> | <a href="#experience">Experience</a> | <a href="#projects">Projects</a> | <a href="#skills">Skills</a>
-          </nav>
-        </header>
+          <section id="hero-static">
+            <h2>Headline: FULL-STACK DEVELOPER</h2>
+            <p>Turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions. Focused on performance, quality, and mentorship.</p>
+          </section>
 
-        <section id="hero">
-          <hr />
-          <h2>Full-Stack Developer Specializing in MERN, Next.js, and AI</h2>
-          <p>Turning ideas into scalable, production-ready applications. Experienced in leading development teams and architecting robust solutions. Focused on performance, quality, and mentorship.</p>
-        </section>
+          <section id="about-static">
+            <h2>About me</h2>
+            <p>I'm a Full-Stack Developer & Team Lead with over 2.5 years of experience in building scalable, high-performance applications. Specialist in the MERN stack, Next.js, and cloud architectures.</p>
+            <ul>
+              <li>2.5+ Years Experience</li>
+              <li>8+ Projects Led</li>
+              <li>5+ Team Size</li>
+            </ul>
+          </section>
 
-        <section id="achievements">
-          <hr />
-          <h2>🏆 Awards & Recognition</h2>
-          <p><strong>Star Performer of the Quarter (April - June 2025):</strong> Awarded by Skillmine Technology for outstanding contribution and leadership performance.</p>
-        </section>
+          <section id="experience-static">
+            <h2>Professional Experience</h2>
+            <div class="job">
+              <h3>Team Lead @ Skillmine Technology</h3>
+              <p>June 2025 - Present | Sivakasi</p>
+              <p>Spearheading development for key client projects and overseeing the end-to-end delivery lifecycle. Architectural decision-making, code reviews, and mentoring.</p>
+            </div>
+            <div class="job">
+              <h3>Junior Software Developer @ Skillmine Technology</h3>
+              <p>May 2024 - May 2025</p>
+              <p>Intensive training and working on software development modules.</p>
+            </div>
+          </section>
 
-        <section id="about">
-          <hr />
-          <h2>About Me</h2>
-          <p>Full-Stack Developer & Team Lead with over 2.5 years of experience. Specialist in building high-performance applications with React, Node.js, and Cloud architectures.</p>
-          <ul>
-            <li>Years of Experience: 2.5+</li>
-            <li>Projects Led: 8+</li>
-            <li>Team Size: 5+</li>
-          </ul>
-        </section>
+          <section id="projects-static">
+            <h2>Key Projects</h2>
+            <div class="project">
+              <h3>AI Sales Agent</h3>
+              <p>Full-Stack Developer | React 19, FastAPI, Gemini 2.5, Python</p>
+              <p>Real-time competitive sales battle card generator powered by 7 specialized AI agents.</p>
+            </div>
+            <div class="project">
+              <h3>AISprintForge</h3>
+              <p>Full-Stack Developer | React 19, NestJS, MongoDB, Gemini 2.5</p>
+              <p>AI-powered sprint intelligence platform turning GitHub/Jira data into actionable reports.</p>
+            </div>
+            <div class="project">
+              <h3>Document Management System (DMS)</h3>
+              <p>Team Lead | NestJS, Mongo, Gemini AI</p>
+              <p>Enterprise-grade AI-powered Document Management System with OCR and RAG.</p>
+            </div>
+          </section>
 
-        <section id="experience">
-          <hr />
-          <h2>Professional Experience</h2>
-          <article>
-            <h3>Team Lead @ Skillmine Technology</h3>
-            <p>June 2025 - Present | Sivakasi</p>
-            <p>Spearheading development for key client projects and overseeing the end-to-end delivery lifecycle. Architectural decision-making and mentoring junior developers.</p>
-          </article>
-          <article>
-            <h3>Junior Software Developer @ Skillmine Technology</h3>
-            <p>May 2024 - May 2025</p>
-          </article>
-        </section>
+          <section id="skills-static">
+            <h2>Technical Stack</h2>
+            <p><strong>Frontend:</strong> React, Next.js, Angular, TypeScript, Tailwind CSS</p>
+            <p><strong>Backend:</strong> Node.js, NestJS, Python, FastAPI, Kafka, Redis</p>
+            <p><strong>AI & DevOps:</strong> Gemini AI, LangChain, Docker, LangGraph</p>
+          </section>
 
-        <section id="projects">
-          <hr />
-          <h2>Key Projects</h2>
-          <ul>
-            <li><strong>Document Management System (DMS):</strong> AI-powered enterprise solution.</li>
-            <li><strong>First Credit System (FCS):</strong> Debt recovery platform with compliance logic.</li>
-            <li><strong>AI Sales Agent:</strong> Multi-agent research pipeline (R&D).</li>
-            <li><strong>AISprintForge:</strong> AI-powered sprint intelligence platform.</li>
-          </ul>
-        </section>
+          <section id="contact-static">
+            <h2>Connect</h2>
+            <p>Email: mvp.bose23@gmail.com</p>
+            <p>Phone: +91 9655396956</p>
+            <p>LinkedIn: https://linkedin.com/in/pandi-selvam-p-1ab62b2a1</p>
+          </section>
 
-        <section id="skills">
-          <hr />
-          <h2>Technical Skills</h2>
-          <p><strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS, Angular</p>
-          <p><strong>Backend:</strong> Node.js, NestJS, Python, FastAPI, MongoDB, Kafka</p>
-          <p><strong>AI & Tools:</strong> Gemini AI, LangChain, Docker, Figma</p>
-        </section>
-
-        <section id="education">
-          <hr />
-          <h2>Education</h2>
-          <p><strong>MCA:</strong> V.H.N.S.N College (2023) - 75.3%</p>
-          <p><strong>BCA:</strong> A.N.J.A College (2020) - 60%</p>
-        </section>
-
-        <footer>
-          <hr />
-          <p>&copy; 2026 Pandi Selvam. All rights reserved.</p>
-        </footer>
+          <footer>
+            <p>&copy; 2026 Pandi Selvam. Full-Stack Engineering Portfolio.</p>
+          </footer>
+        </article>
       </div>
     </div>
     

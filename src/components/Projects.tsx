@@ -5,7 +5,7 @@ export default function Projects() {
   const { projects } = portfolioData;
 
   return (
-    <section className="relative w-full max-w-6xl mx-auto px-6 py-12 md:py-20">
+    <section className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-20">
         
       {/* Section Title */}
       <h2 className="text-4xl md:text-6xl font-['Bangers'] text-gray-900 tracking-wide mb-16 text-center reveal" data-reveal>
@@ -13,7 +13,7 @@ export default function Projects() {
         <span className="text-blue-500">.</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
         {projects.map((project, index) => (
           <div 
             key={index} 
@@ -96,7 +96,7 @@ export default function Projects() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 px-0 sm:px-2">
                 {portfolioData.learningProjects.map((project, index) => (
                 <a
                     key={index}
