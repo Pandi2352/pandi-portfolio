@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef, lazy, memo, Suspense } from "react";
+import React, { useState, useEffect, useRef, lazy, memo } from "react";
 import { portfolioData } from "../data/portfolio";
 import { Phone, Clock, Layers, Users, Sparkles } from "lucide-react";
+import LazySection from "./LazySection";
 
 const About = lazy(() => import("./About"));
 const Education = lazy(() => import("./Education"));
@@ -271,37 +272,37 @@ export default function Home() {
         </div>
 
         {/* Sections */}
-        <Suspense>
-          <div id="about" className="w-full">
-            <About />
-          </div>
+        <LazySection id="about" className="w-full" fallback={<div className="w-full min-h-[120px]" />} rootMargin="400px">
+          <About />
+        </LazySection>
 
-          <div id="experience" className="w-full">
-            <Experience />
-          </div>
+        <LazySection id="experience" className="w-full" fallback={<div className="w-full min-h-[120px]" />} rootMargin="400px">
+          <Experience />
+        </LazySection>
 
-          <div id="skills" className="w-full">
-            <Skills />
-          </div>
+        <LazySection id="skills" className="w-full" fallback={<div className="w-full min-h-[120px]" />} rootMargin="400px">
+          <Skills />
+        </LazySection>
 
-          <div id="projects" className="w-full">
-            <Projects />
-          </div>
+        <LazySection id="projects" className="w-full" fallback={<div className="w-full min-h-[120px]" />} rootMargin="400px">
+          <Projects />
+        </LazySection>
 
-          <div id="education" className="w-full">
-            <Education />
-          </div>
+        <LazySection id="education" className="w-full" fallback={<div className="w-full min-h-[120px]" />} rootMargin="400px">
+          <Education />
+        </LazySection>
 
-          <div id="certificates" className="w-full">
-            <Certificates />
-          </div>
+        <LazySection id="certificates" className="w-full" fallback={<div className="w-full min-h-[120px]" />} rootMargin="400px">
+          <Certificates />
+        </LazySection>
 
-          <div id="contact" className="w-full">
-            <Contact />
-          </div>
+        <LazySection id="contact" className="w-full" fallback={<div className="w-full min-h-[120px]" />} rootMargin="400px">
+          <Contact />
+        </LazySection>
 
+        <LazySection fallback={<div className="w-full min-h-[80px]" />} rootMargin="400px">
           <Footer />
-        </Suspense>
+        </LazySection>
 
         {/* Spacer for bottom nav visibility */}
         <div className="h-24"></div>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, Suspense, type ReactNode } from 'react';
 
 interface LazySectionProps {
+  id?: string;
+  className?: string;
   children: ReactNode;
   fallback?: ReactNode;
   threshold?: number;
@@ -12,6 +14,8 @@ interface LazySectionProps {
  * Useful for deferring the loading of React.lazy components and improving LCP/TBT.
  */
 const LazySection: React.FC<LazySectionProps> = ({ 
+  id,
+  className,
   children, 
   fallback = null, 
   threshold = 0.1, 
@@ -38,8 +42,12 @@ const LazySection: React.FC<LazySectionProps> = ({
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
+  const wrapperClassName = ['w-full min-h-[100px]', className]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div ref={sectionRef} className="w-full min-h-[100px]">
+    <div id={id} ref={sectionRef} className={wrapperClassName}>
       {isIntersecting ? (
         <Suspense fallback={fallback}>
           {children}
